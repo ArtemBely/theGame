@@ -1,0 +1,255 @@
+@media (min-width: 320px) and (max-width: 576px) {
+    .wrap_logo > img {
+      width: 200px;
+    }
+    .firstScreen {
+      width: 100%;
+      background: none;
+    }
+    #mobile_fone {
+      display: block;
+      margin: 0;
+      position: absolute;
+      left: -245px;
+      top: 130px;
+    }
+    .mobile_book {
+      width: 320px;
+      height: 110px;
+      border: 1px solid #BB6B75;
+      border-radius: 20px;
+      box-sizing: border-box;
+      position: relative;
+      top: -186px;
+      cursor: pointer;
+      display: flex;
+    }
+    .wrap_fithScreen {
+    position: relative;
+    top: -932px;
+}
+    .mobile_img_version {
+      display: block;
+      width: 155px;
+    }
+    #second_mob {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+    .desctop_img_version {
+    	display: none;
+    }
+    .mobile_book > a {
+      text-decoration: none;
+      position: absolute;
+      font-size: 25px;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #BB6B75;
+    }
+    .secondScreen {
+      width: 320px;
+      grid-template-columns: 1fr;
+      position: relative;
+      top: -644px;
+    }
+    #title1_spec {
+          width: 163px;
+    }
+    .wrap_book > img {
+      width: 713px;
+      position: relative;
+      top: -202px;
+      height: auto;
+      left: 0px;
+    }
+    .wrap_thirdScreen {
+      position: relative;
+      top: -654px;
+    }
+    #relax_txt {
+        top: -345px;
+        width: 290px;
+        left: 0px;
+    }
+    .title1, .title2 {
+      font-size: 40px;
+      line-height: 110%;
+    }
+    .txt1 {
+      font-size: 25px;
+      line-height: 160%;
+    }
+    .book_btn {
+      font-size: 25px;
+      line-height: 160%;
+      width: 320px;
+      margin-top: 303px;
+    }
+    .each_imgs1 {
+      width: 178px;
+      height: 310px;
+  }
+  .wrap_fourthScreen {
+    position: relative;
+    margin-top: 0;
+    top: -581px;
+}
+  .wrap_seats {
+    top: 952px;
+  }
+  #first_mob {
+        width: 155px;
+  }
+  .wrap_popcorn > img {
+    position: relative;
+    top: -202px;
+    width: 476px;
+    left: -59px;
+}
+  .firstGradient {
+        width: 253px;
+  }
+  .wrap_sixthScreen {
+    position: relative;
+    top: -1350px;
+}
+  .thirdDsgn {
+    width: 320px;
+    grid-row: 2 / 3;
+    grid-column: 1 / 3;
+    position: relative;
+    top: 20px;
+  }
+  .sixthScreen {
+    width: 320px;
+  }
+  .neon_txt {
+    font-size: 40px;
+    padding: 48px;
+    position: relative;
+    top: -880px;
+}
+  .fourthScreen, .fithScreen, .wrap_forYou {
+    width: 320px;
+  }
+  .wrap_designPhotos {
+    display: grid;
+    width: 320px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    height: 951px;
+    grid-gap: 7px;
+}
+  .wrap_forYou {
+    position: relative;
+    top: -64px;
+  }
+  .seventhScreen {
+        width: 320px;
+  }
+  .wrap_hookah > img {
+    width: 1187px;
+    position: relative;
+    left: -501px;
+    top: 233px;
+}
+  #more_hookah {
+    width: 250px;
+    position: relative;
+    top: -110px;
+  }
+  .wrap_seventhScreen {
+    position: relative;
+    margin-top: 0;
+    top: -1512px;
+    left: 0px;
+}
+  .thirdScreen {
+    display: grid;
+    grid-template-rows: 331px 47px 89px 60px;
+    position: relative;
+    left: 0px;
+}
+#cinema_mobile_fone {
+  display: block;
+  position: relative;
+  top: 45px;
+}
+#cinema_desktop_fone {
+  display: none;
+}
+#for_lover {
+      width: 200px;
+}
+.wrap_cinema > img {
+    width: auto;
+}
+.wrap_cinema {
+    position: relative;
+    left: 15px;
+    top: -151px;
+}
+.wrap_auto > img {
+    width: 167px;
+}
+#welcome_txt, #welcome_txt_bellow,
+.ninthScreen, .wrap_center_msg {
+  width: 320px;
+}
+.second_wrap_auto {
+      left: -159px;
+}
+.wrap_center_msg {
+  z-index: 1;
+  position: relative;
+  top: 79px;
+}
+.wrap_map {
+    width: 100%;
+    height: 540px;
+    width: 320px;
+    position: relative;
+    left: 396px;
+    background: grey;
+    top: -1789px;
+}
+#wats_btn {
+      grid-column: 1 / 2;
+      margin: 0;
+}
+#tlgr_btn {
+    position: relative;
+    left: 0px;
+    margin-left: 0px;
+}
+.msg_btn, .quest_btn {
+  width: 320px;
+}
+.wrap_book_seat_btn, .tel_btn {
+    grid-column: 1 / 2;
+    width: 320px;
+}
+#txt2 {
+    width: 277px;
+    position: relative;
+    top: -155px;
+}
+.wrap_imgs1 {
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+    display: grid;
+    margin-bottom: 41px;
+    width: 320px;
+}
+#friends_txt {
+    width: 320px;
+}
+#friends1 {
+  height: fit-content;
+  width: 226px;
+}
+}
