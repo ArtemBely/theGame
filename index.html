@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./public/styles/style1.css">
     <link rel="stylesheet" href="./public/styles/style4k.css">
     <link rel="stylesheet" href="./public/styles/style1290.css">
+    <link rel="stylesheet" href="./public/styles/pre-mobile.css">
     <link rel="stylesheet" href="./public/styles/mobile.css">
   </head>
   <body>
@@ -19,7 +20,8 @@
              <div class="secondScreen">
                    <div class="wrap_seats">
                        <p class="title1" id='title1_spec'>Place for you</p>
-                       <p class="book_btn">Book Your Seat</p>
+                       <p class="txt1" id='relax_txt-mobile'>A nice place to relax or have a good time. Play games on the world's most powerful gaming computer or stream live from the Streaming Room.</p>
+                       <button type="button" class="book_btn">Book Your Seat</button>
                    </div>
                    <p class="wrap_book"><img src='./public/images/Group 61.png' /></p>
                    <p class="txt1" id='relax_txt'>A nice place to relax or have a good time. Play games on the world's most powerful gaming computer or stream live from the Streaming Room.</p>
@@ -28,10 +30,10 @@
           <div class="wrap_thirdScreen">
               <div class="thirdScreen">
                   <div class="wrap_imgs1">
-                      <img src="./public/images/Cyber_Club_Vis_0006 1.png" class="each_imgs1"/>
-                      <img src="./public/images/Cyber_Club_Vis_0013.png" class="each_imgs1"/>
-                      <img src="./public/images/Cyber_Club_Vis_0009.png" class="each_imgs1"/>
-                      <img src="./public/images/Cyber_Club_Vis_0003.png" class="each_imgs1"/>
+                    <img src="./public/images/Cyber_Club_Vis_0006 1.png" class="each_imgs1"/>
+                    <img src="./public/images/Cyber_Club_Vis_0013.png" class="each_imgs1"/>
+                    <img src="./public/images/Cyber_Club_Vis_0009.png" class="each_imgs1"/>
+                    <img src="./public/images/Cyber_Club_Vis_0003.png" class="each_imgs1"/>
                   </div>
                   <p class="title1 firstGradient">.. for Your </p> <p class="title1 firstGradient" id='friends1'> Friends or Partners</p>
                   <p class="txt1" id='friends_txt'>Gather your friends together in one place. Have a buddy championship and we'll provide everything you need for it.</p>
@@ -42,7 +44,7 @@
                     <div class="wrap_forYou">
                           <p class="title2">.. and</p><p class="title2" id='for_lover'>for Your Lover</p>
                     </div>
-                    <p class="wrap_cinema"><img src='./public/images/image 2.png' id='cinema_desktop_fone' /> <img src="./public/images/image 2 — копия.png" id='cinema_mobile_fone'> </p>
+                    <p class="wrap_cinema"><img src='./public/images/image 2.png' id='cinema_desktop_fone' /> <img src="./public/images/image 2 mobile.png" id='cinema_mobile_fone'> </p>
                     <p class="txt1" id='txt2'>The entire cinema is at your service. Whether it's a date for two or inviting a large group, any movie will be even more comfortable in our state-of-the-art cinema.</p>
                     <div class="mobile_book">
                           <a href="#">Book Your Seat</a>
@@ -53,24 +55,33 @@
               <div class="fithScreen">
                     <div class="wrap_designPhotos">
                           <img src="./public/images/Cyber_Club_Vis_0007.png" class="below_designImgs desctop_img_version">
-                          <img src="./public/images/Cyber_Club_Vis_0008 — копия.png" class="below_designImgs mobile_img_version" id='first_mob'>
+                          <img src="./public/images/Cyber_Club_Vis_0008_mobile.png" class="below_designImgs mobile_img_version" id='first_mob'>
                           <img src="./public/images/Cyber_Club_Vis_0008.png" class="below_designImgs secondDsgn desctop_img_version">
-                          <img src="./public/images/Cyber_Club_Vis_0007 — копия.png" class="below_designImgs mobile_img_version" id='second_mob'>
+                          <img src="./public/images/Cyber_Club_Vis_0007_mobile.png" class="below_designImgs mobile_img_version" id='second_mob'>
                           <img src="./public/images/Cyber_Club_Vis_0005 1.png" class="below_designImgs thirdDsgn">
                     </div>
                     <p class="neon_txt">Your meeting place</p>
+                    <img src="./public/images/Cyber_Club_Vis_0005 1.png" class="thirdDsgn_mobile">
               </div>
           </div>
           <div class="wrap_sixthScreen">
               <div class="sixthScreen">
                     <p class="firstGradient title1">Snacks and drinks to keep you from going hungry</p>
-                    <p class="wrap_popcorn"><img src="./public/images/Frame 48.png" ></p>
+                    <div class="wrap_popcorn">
+                        <p class="wrap_popcorn_image" id="cola">
+                            <img src="./public/images/cola.png">
+                        </p>
+                        <p class="wrap_popcorn_image" id="popcorn">
+                            <img src="./public/images/popcorn.png">
+                        </p>
+                    </div>
               </div>
           </div>
           <div class="wrap_seventhScreen">
               <div class="seventhScreen">
                     <p class="title1 secondGradient" id='more_hookah'>More relaxation with high-quality hookah</p>
-                    <p class="wrap_hookah"><img src="./public/images/Component 20 — копия.png" alt=""></p>
+                    <p class="wrap_hookah"><img src="./public/images/shutterstock_large.png"></p>
+                    <p class="wrap_hookah-mobile"><img src="./public/images/shutterstock.png"></p>
               </div>
           </div>
           <div class="wrap_map">
@@ -89,6 +100,7 @@
                       <p class="msg_btn" id='tlgr_btn'> <img src="./public/images/akar-icons_telegram-fill.svg" alt=""> Telegram </p>
                       <p class="msg_btn" id='wats_btn'> <img src="./public/images/akar-icons_whatsapp-fill.svg" alt=""> WhatsApp </p>
                       <p class="tel_btn">or call us <a href="tel:971 4 0000000"> +971 4 0000000</a></p>
+                      <p class="tel_btn" id="mobile_tel">or call us <a href="tel:971 4 0000000"></br> +971 4 0000000</a></p>
                   </div>
                   <p class="wrap_auto second_wrap_auto"><img src="./public/images/Cyber_Club_Vis_0010 1.png" alt=""></p>
               </div>
@@ -97,12 +109,12 @@
               <div class="footer">
                   <p class="wrap_footer_logo"><img src="./public/images/Vector.svg" alt="" id='footer_logo'> </p>
                   <p class="grey_footer_txt spec_grey2">The Game, LLC</p>
-                  <p class="grey_footer_txt spec_grey2">JBR, Bahar 2</p>
+                  <p class="grey_footer_txt spec_grey2" id="street">JBR, Bahar 2</p>
                   <p class="wrpa_insta"> <img src="./public/images/Vector — копия 2.svg" alt=""> </p>
                   <p class="wrap_about"> <img src="./public/images/Union.svg" class="social_footer"> <a href="#" class="footer_links">About</a> </p>
                   <p class="wrap_location"><img src="./public/images/Vector — копия.svg" class="social_footer"> <a href="#" class="footer_links">Location</a> </p>
                   <p class="wrap_book2">+<a href="#" class="footer_links">Book</a></p>
-                  <p class="made_in grey_footer_txt">Сайт сделан в <a href="https://acorn.ws" class="grey_footer_txt">Acorn</a></p>
+                  <p class="made_in grey_footer_txt">Сайт сделан в <a href="https://acorn.ws" class="grey_footer_txt"> Acorn</a></p>
                   <p class="policy"><a href="#" class="grey_footer_txt">Privacy Policy</a></p>
                   <p class="grey_footer_txt" id='year'>© 2022</p>
               </div>

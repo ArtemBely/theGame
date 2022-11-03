@@ -76,17 +76,14 @@
 }
 .wrap_seventhScreen {
     margin-top: 0;
-    top: -279px;
+    top: -79px;
 }
 .wrap_sixthScreen {
     position: relative;
     top: -400px;
 }
-.wrap_hookah > img {
-    width: 1557px;
-}
 .firstGradient {
-  width: 1000px;
+  width: 810px;
 }
 .wrap_popcorn {
   margin: 0;
@@ -118,16 +115,10 @@
   position: relative;
   top: -17px;
 }
-.wrap_thirdScreen {
-      top: -433px;
-      position: relative;
-}
 .wrap_allScreens {
-    height: 9111px;
+    /* height: 9111px; */
 }
-.thirdScreen {
-  left: 440px;
-}
+
 .title1, .title2 {
   font-size: 100px;
 }
@@ -153,6 +144,10 @@
 }
 .wrap_secondScreen {
   margin-top: 223px;
+}
+.wrap_thirdScreen {
+  position: relative;
+  bottom: 420px;
 }
 }
 @media (min-width: 992px) and (max-width: 1290px) {
