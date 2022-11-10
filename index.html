@@ -29,13 +29,13 @@
           </div>
           <div class="wrap_thirdScreen">
               <div class="thirdScreen">
-                  <div class="wrap_imgs1">
+                  <div class="wrap_imgs1" data-100-top="left: -460px;" data-200-bottom="left: 0px;">
                     <img src="./public/images/Cyber_Club_Vis_0006 1.png" class="each_imgs1"/>
                     <img src="./public/images/Cyber_Club_Vis_0013.png" class="each_imgs1"/>
                     <img src="./public/images/Cyber_Club_Vis_0009.png" class="each_imgs1"/>
                     <img src="./public/images/Cyber_Club_Vis_0003.png" class="each_imgs1"/>
                   </div>
-                  <p class="title1 firstGradient">.. for Your </p> <p class="title1 firstGradient" id='friends1'> Friends or Partners</p>
+                  <p class="title1 firstGradient">.. for Your </p> <p class="title1 firstGradient" id='friends1'>Friends or Partners</p>
                   <p class="txt1" id='friends_txt'>Gather your friends together in one place. Have a buddy championship and we'll provide everything you need for it.</p>
               </div>
           </div>
@@ -60,7 +60,7 @@
                           <img src="./public/images/Cyber_Club_Vis_0007_mobile.png" class="below_designImgs mobile_img_version" id='second_mob'>
                           <img src="./public/images/Cyber_Club_Vis_0005 1.png" class="below_designImgs thirdDsgn">
                     </div>
-                    <p class="neon_txt">Your meeting place</p>
+                    <p class="neon_txt"><span class="neon_fone"></span>Your meeting place</p>
                     <img src="./public/images/Cyber_Club_Vis_0005 1.png" class="thirdDsgn_mobile">
               </div>
           </div>
@@ -80,8 +80,16 @@
           <div class="wrap_seventhScreen">
               <div class="seventhScreen">
                     <p class="title1 secondGradient" id='more_hookah'>More relaxation with high-quality hookah</p>
-                    <p class="wrap_hookah"><img src="./public/images/shutterstock_large.png"></p>
-                    <p class="wrap_hookah-mobile"><img src="./public/images/shutterstock.png"></p>
+                    <p class="wrap_hookah">
+                        <img src="./public/images/shutterstock_large.png" data-top="left: -10%;" data-500-bottom="left: 0%">
+                    </p>
+                    <p class="wrap_hookah-mobile">
+                        <img src="./public/images/shutterstock.png" data-top="top: 0px;" data-100-bottom="top: -50px">
+                    </p>
+              </div>
+              <div class="wrap_ember" data-500-bottom="right: -10%" data-center="right: 5%;" data-top="right: 10%">
+                <img src="./public/images/ember_1.png" id="ember1">
+                <img src="./public/images/ember_2.png" id="ember2">
               </div>
           </div>
           <div class="wrap_map">
@@ -120,6 +128,14 @@
               </div>
           </div>
       </div>
-      <script src='./public/scripts/script1.js'></script>
+      <script type="text/javascript" src="./public/scripts/skrollr.min.js"></script>
+      <script type="text/javascript">
+        var s = skrollr.init({
+            smoothScrolling: true,
+            smoothScrollingDuration: 2000
+        });
+      </script>
+      <script type="text/javascript" src="./public/scripts/neonTextAnimation.js"></script>
+      <script type="text/javascript" src="./public/scripts/popcornImageTransform.js"></script>
   </body>
 </html>

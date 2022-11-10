@@ -234,14 +234,26 @@
   }
   #popcorn {
     right: -40px;
+    bottom: -21px;
     width: 110%;
+  }
+  .js-popcorn-active #cola {
+    left: -39px;
+  }
+  .js-popcorn-active #popcorn {
+    transform: translateX(-5%)
   }
   .seventhScreen {
     width: 278px;
     grid-template-rows: 230px 1fr;
   }
-  .wrap_hookah-mobile > img {
+  .wrap_hookah-mobile {
     height: 360px;
+  }
+  .wrap_ember{
+    width: 750px;
+    top: -25px;
+    transform: translateX(50%)
   }
   #more_hookah {
     width: 250px;

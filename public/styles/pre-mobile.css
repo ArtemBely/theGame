@@ -97,9 +97,17 @@
     display: none;
   }
   .wrap_hookah-mobile {
+    height: 660px;
+    width: 100%;
+    overflow: hidden; 
     display: inline-block;
   }
-  
+  .wrap_hookah-mobile > img {
+    width: 100%;
+    height: 110%;
+		object-fit: cover;
+		position: relative;
+  }
   #tlgr_btn {
     margin-top: 20px;
   }
@@ -255,6 +263,12 @@
   }
   #cola {
     left: -50px;
+  }
+
+  /* 7 */
+
+  .wrap_ember {
+    top: -15px;
   }
 
   /* 9 */

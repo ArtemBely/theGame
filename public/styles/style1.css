@@ -180,11 +180,10 @@ button {
 }
 
 .wrap_imgs1 {
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 37px;
-  display: grid;
+  column-gap: 37px;
+  display: flex;
   margin-bottom: 41px;
-	transform: translateX(0)
+	position: relative;
 }
 #friends_txt {
   margin-top: 9px;
@@ -221,11 +220,21 @@ button {
 #cola {
 	left: -25px;
 	bottom: -20px;
+	transform: translateX(0);
+	transition: all 0.5s ease-in-out;
 }
 #popcorn {
 	bottom: -25px;
 	right: -100px;
 	width: 90%;
+	transform: translateX(0);
+	transition: all 0.5s ease-in-out;
+}
+.js-popcorn-active > #cola  {
+	transform: translateX(30%);
+}
+.js-popcorn-active > #popcorn  {
+	transform: translateX(-10%);
 }
 .fithScreen {
 	grid-template-columns: 1fr;
@@ -246,6 +255,7 @@ button {
 	display: none;
 }
 .neon_txt {
+	position: relative;
 	font-weight: 700;
 	font-size: 60px;
 	line-height: 110%;
@@ -257,6 +267,22 @@ button {
     -webkit-text-stroke-width: 1px;
 		letter-spacing: 1px;
 		margin-top: 60px;
+}
+.neon_fone {
+	position: absolute;
+	left: 25%;right: 25%;
+	top: -40px;bottom: -40px;
+	z-index: 0;
+	transition: all 0.5s ease-in;
+}
+.neon_text_active {
+	background-color: #DEDE7F;
+		-webkit-text-fill-color: transparent;
+		-webkit-background-clip: text;
+		transition: all 0.5s ease-in;
+}
+.neon_text_active > .neon_fone {
+	background: radial-gradient(ellipse, rgb(222,222,127, 0.5) 0%, transparent 60%);
 }
 .below_designImgs {
 	width: 594px;
@@ -292,26 +318,41 @@ button {
 	background-clip: text;
 	text-fill-color: transparent;
 	position: relative;
-	z-index: 1;
+	z-index: 2;
 }
 .wrap_hookah {
 	position: relative;
-	top: -173px;
+	top: -153px;
 	left: -282px;
+	width: 802px;
+	height: 807px;
+	overflow: hidden;
 }
 .wrap_hookah > img {
-		width: 624px;
 		height: 807px;
 		object-fit: cover;
+		position: relative;
+		right: 200px;
+		z-index: 1;
+}
+.wrap_ember {
+	position: absolute;
+	top: -170px;
+	display: flex;
+	align-items: flex-end;
+	height: 100%;
+	width: 1750px;
+}
+.wrap_ember > img {
+	width: 50%;
+	position: relative;
+}
+#ember1 {
+	z-index: 2;
 }
 .wrap_hookah-mobile {
 	position: relative;
 	display: none;
-}
-.wrap_hookah-mobile > img {
-	width: 100%;
-	height: 660px;
-	object-fit: cover;
 }
 .wrap_seventhScreen {
 	position: relative;
