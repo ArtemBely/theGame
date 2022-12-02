@@ -118,6 +118,14 @@
     left: 218px;
     top: 50px;
 }
+.wrap_map {
+  top: 400px;
+  margin-bottom: 900px;
+}
+#map {
+  width: 3840px;
+  height: 1877px;
+}
 .wrap_book2 {
     grid-column: 6 / 7;
     grid-row: 2 / 3;

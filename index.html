@@ -5,16 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Game</title>
     <link rel="stylesheet" href="./public/styles/style1.css">
+    <link rel="stylesheet" href="./public/styles/sphere.css">
     <link rel="stylesheet" href="./public/styles/style4k.css">
     <link rel="stylesheet" href="./public/styles/style1290.css">
     <link rel="stylesheet" href="./public/styles/pre-mobile.css">
     <link rel="stylesheet" href="./public/styles/mobile.css">
   </head>
-  <body>
+  <body class="preview">
+    <div class="preview_wrap">
+      <div class="overlay_wrap">
+        <div class="overlay">
+          <div class="overlay-link_wrap">
+            <a class="overlay-link" href="#">About</a>
+          </div>
+          <div class="overlay-logo">
+            <img src="./public/images/Logo_copy.svg" alt="">
+          </div>
+          <div class="overlay-link_wrap right-part">
+            <a class="overlay-link" href="#">Book Your Seat</a>
+          </div>
+          <p class="overlay-text">Let’s find</br> another</br> place</p>
+          <p class="overlay-text right-part">Place for </br>relaxed </br>pastime</p>
+        </div>
+      </div>
+      <canvas class="webgl"></canvas> 
+      <img src="./public/images/1plan.png" alt="" class="img-sand">
+    </div> 
       <div class="wrap_allScreens">
           <div class="firstScreen">
-              <p class="wrap_logo"><img src="./public/images/Logo.svg" /></p>
-              <img src="./public/images/Group 60 — копия.png" id='mobile_fone' />
+            <p class="wrap_logo"><img src="./public/images/Logo.svg" /></p>
+            <img src="./public/images/Group 60 — копия.png" id='mobile_fone' />
           </div>
           <div class="wrap_secondScreen">
              <div class="secondScreen">
@@ -29,7 +49,7 @@
           </div>
           <div class="wrap_thirdScreen">
               <div class="thirdScreen">
-                  <div class="wrap_imgs1" data-100-top="left: -460px;" data-200-bottom="left: 0px;">
+                  <div class="wrap_imgs1" data--100-top="left: -460px;" data-700-bottom="left: 0px;">
                     <img src="./public/images/Cyber_Club_Vis_0006 1.png" class="each_imgs1"/>
                     <img src="./public/images/Cyber_Club_Vis_0013.png" class="each_imgs1"/>
                     <img src="./public/images/Cyber_Club_Vis_0009.png" class="each_imgs1"/>
@@ -84,7 +104,7 @@
                         <img src="./public/images/shutterstock_large.png" data-top="left: -10%;" data-500-bottom="left: 0%">
                     </p>
                     <p class="wrap_hookah-mobile">
-                        <img src="./public/images/shutterstock.png" data-top="top: 0px;" data-100-bottom="top: -50px">
+                        <img src="./public/images/shutterstock.png" data-top="top: 0px;" data-700-bottom="top: -50px">
                     </p>
               </div>
               <div class="wrap_ember" data-500-bottom="right: -10%" data-center="right: 5%;" data-top="right: 10%">
@@ -93,9 +113,7 @@
               </div>
           </div>
           <div class="wrap_map">
-              <div class="map">
-
-              </div>
+            <div id="map"></div>
           </div>
           <div class="wrap_ninthScreen">
               <div class="ninthScreen">
@@ -128,14 +146,65 @@
               </div>
           </div>
       </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+      <script type="text/javascript" src="./public/scripts/three.min.js"></script>
+      <script type="text/javascript" src="./public/scripts/sphere.js"></script>
+      <script type="text/javascript" src="./public/scripts/three.min.js"></script>
+      <script type="text/javascript" src="./public/scripts/sphere.js"></script>
       <script type="text/javascript" src="./public/scripts/skrollr.min.js"></script>
       <script type="text/javascript">
         var s = skrollr.init({
             smoothScrolling: true,
-            smoothScrollingDuration: 2000
+            smoothScrollingDuration: 8000
         });
       </script>
       <script type="text/javascript" src="./public/scripts/neonTextAnimation.js"></script>
       <script type="text/javascript" src="./public/scripts/popcornImageTransform.js"></script>
+      <!-- <script src="https://api-maps.yandex.ru/2.0/?load=package.standard,package.geoObjects&lang=ru-RU" type="text/javascript"></script>
+      <script>ymaps.ready(init);
+      function init() {
+        var myMap = new ymaps.Map("map", {
+            center: [25.077547, 55.135043],
+            zoom: 13,
+
+    }),
+
+    // Создаем метку с помощью вспомогательного класса.
+    myPlacemark1 = new ymaps.Placemark([25.077547, 55.135043], {
+      // Свойства.
+      // Содержимое хинта.
+      hintContent: 'Надпись, которая всплаывет при наведении на метку'
+    }, {
+      iconImageSize: [70, 70],
+      // Смещение левого верхнего угла иконки относительно
+      // её "ножки" (точки привязки).
+      iconImageOffset: [-65, -110]
+    })
+  
+
+  // Добавляем все метки на карту.
+  myMap.geoObjects
+    .add(myPlacemark1)
+
+}
+</script> -->
+      <script type="text/javascript">
+        function initMap() {
+            var coordinates = {lat: 25.077097631716903, lng: 55.13445435061175}
+
+            var map = new google.maps.Map(document.getElementById('map'), {
+            center: coordinates,
+            zoom: 10,
+            disableDefaultUI: true
+            })
+
+            var marker = new google.maps.Marker({
+                position: coordinates,
+                map: map,
+                zoom: 20
+            });
+        }
+      </script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjKiiRhiYjzSxu_VHWIG3SK7YkZUlt08g&callback=initMap"></script> 
   </body>
 </html>

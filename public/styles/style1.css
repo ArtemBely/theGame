@@ -42,11 +42,18 @@ body {
 	background: #000000;
 	overflow-x: hidden;
 }
+
+body.preview {
+	height: 100vh !important;
+	overflow-y: hidden;
+}
+
 button {
 	background: none; 
 	border: none;
 	padding: 0;
 }
+
 .wrap_allScreens {
   width: 100%;
   display: grid;
@@ -58,8 +65,10 @@ button {
     background: url('../images/Group 60.png');
     background-repeat: no-repeat;
     width: 100vw;
-    height: 100vh;
+    height: 140vh;
     background-size: cover;
+		filter: blur(5px);
+		transition: filter 2s ease-in-out;
 }
 .wrap_logo {
   display: flex;
@@ -359,8 +368,21 @@ button {
 	margin-top: 430px;
 }
 .wrap_map {
+	position: relative;
+	top: 100px;
 	width: 100%;
-	height: 500px;
+	z-index: 3;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 500px;
+}
+#map {
+	height: 900px;
+	width: 1920px;
+	background-color: black;
+}
+.ymaps-layers-pane {
+	
 }
 .wrap_book_seat_btn {
   grid-column: 1 / 3;

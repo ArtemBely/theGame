@@ -213,6 +213,12 @@
     grid-row: 7 / 8;
     margin-left: 0;
   }
+  .wrap_map {
+    top: 200px;
+  }
+  #map {
+    height: 774px;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
