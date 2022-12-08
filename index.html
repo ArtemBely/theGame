@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./public/styles/pre-mobile.css">
     <link rel="stylesheet" href="./public/styles/mobile.css">
   </head>
-  <body class="preview">
+  <body class="">
     <div class="preview_wrap">
       <div class="overlay_wrap">
         <div class="overlay">
@@ -22,10 +22,22 @@
             <img src="./public/images/Logo_copy.svg" alt="">
           </div>
           <div class="overlay-link_wrap right-part">
-            <a class="overlay-link" href="#">Book Your Seat</a>
+            <a class="overlay-link" id="long-link" href="#">Book Your Seat</a>
+            <a class="overlay-link" id="short-link" href="#">Book</a>
           </div>
-          <p class="overlay-text">Let’s find</br> another</br> place</p>
-          <p class="overlay-text right-part">Place for </br>relaxed </br>pastime</p>
+          <p class="overlay-text" id="desktop-text">Let’s find</br> another</br> place</p>
+          <p class="overlay-text right-part" id="desktop-text">Place for </br>relaxed </br>pastime</p>
+        </div>
+        <div class="scroll-notice">
+          <img src="./public/images/bx_mouse.svg" alt="">
+          <p class="notice-text">Scroll to Start</p>
+          <div class="notice-bar"></div>
+        </div>
+        <div class="mobile-text_wrap">
+          <div class="mobile-text">
+            <p class="overlay-text">Let’s find </br>another place -</p>
+            <p class="overlay-text right-part">place for relaxed </br>pastime</p>
+          </div>
         </div>
       </div>
       <canvas class="webgl"></canvas> 
@@ -112,6 +124,193 @@
                 <img src="./public/images/ember_2.png" id="ember2">
               </div>
           </div>
+          <div class="spaces-scroll">
+            <div class="wrap_spaces">
+              <div class="spaces">
+                <h1 class="firstGradient small-title">Spaces</h1>
+                <div class="computers">
+                  <div class="item-wrap large-item">
+                    <div class="computers-item">
+                      <p class="item-title">Steam </br>+ Steam MAX</p>
+                      <p class="item-text">The fastest computer </br>in the world <span class="prefix">×2</span></p>
+                      <div class="cp-characters">
+                        <p class="item-text">Processor</p><p class="item-text">113900KF</p>
+                        <p class="item-text">GPU</p><p class="item-text">RTX4090</p>
+                        <p class="item-text">RAM</p><p class="item-text">DDR5 64GB</p><p class="item-text">ROM</p>
+                        <p class="item-text">SSD PCI 5.0 4Tb</p><p class="item-text">Monitor</p><p class="item-text">42″ 4K OLED ASUS</p>
+                      </div>
+                      <p class="item-text">Microphone + Camera + Light</p>
+                      <p class="item-text">Additional chat monitor</p>
+                      <p class="item-text">Streem Deck</p>
+                    </div>
+                  </div>
+                  <div class="item-wrap large-item">
+                    <div class="computers-item">
+                      <p class="item-title">Room with 10 computers <span class="prefix">×3</span></p>
+                      <div class="cp-characters">
+                        <p class="item-text">Processor</p><p class="item-text">13700KF</p>
+                        <p class="item-text">GPU</p><p class="item-text">RTX4070 Ti 12Gb</p>
+                        <p class="item-text">RAM</p><p class="item-text">DDR5 32GB</p>
+                        <p class="item-text">ROM</p><p class="item-text">SSD PCI 5.0 2Tb</p>
+                        <p class="item-text">Monitor</p><p class="item-text">27″ 2K IPS</p>
+                        <p class="item-text"></p><p class="item-text">360 Hz ASUS</p>
+                      </div>
+                      <p class="item-text">Body of computer</p>
+                      <p class="item-text">and Power supply</p>
+                    </div>
+                  </div>
+                  <div class="item-wrap large-item">
+                    <div class="computers-item">
+                      <div class="item-title">Bootcamp <span class="prefix">×2</span></div>
+                      <div class="cp-characters">
+                        <p class="item-text">Processor</p><p class="item-text">13700KF</p>
+                        <p class="item-text">GPU</p><p class="item-text">RTX4070 Ti 12Gb</p>
+                        <p class="item-text">RAM</p><p class="item-text">DDR5 32GB</p>
+                        <p class="item-text">ROM</p><p class="item-text">SSD PCI 5.0 2Tb</p>
+                        <p class="item-text">Monitor</p><p class="item-text">24.5″ 1080p IPC</p>
+                        <p class="item-text"></p><p class="item-text">500Hz ASUS</p>
+                      </div>
+                      <p class="item-text">Body of computer</p>
+                      <p class="item-text">and Power supply</p>
+                    </div>
+                  </div>
+                  <div class="item-wrap">
+                    <div class="computers-item">
+                      <p class="item-title">Cinemas</p>
+                      <p class="soon">Coming soon</p>
+                    </div>
+                  </div>
+                  <div class="item-wrap">
+                    <div class="computers-item">
+                      <p class="item-title">Peripherals</p>
+                      <p class="soon">Coming soon</p>
+                    </div>
+                  </div>
+                </div>
+              </div> 
+              <canvas class="spaces-bg"></canvas> 
+            </div>
+          </div>
+          <div class="wrap_packages">
+            <div class="packages">
+              <p class="firstGradient small-title">Packages</p>
+                <div class="packages-table">
+                  <div class="table-item">
+                    <p class="table-item_title">Cinema</p>
+                    <div class="table-item_row">
+                      <p class="table-item_text" id="table-grey-text">Hours</p>
+                      <p class="table-item_text">1</p>
+                      <p class="table-item_text">3</p>
+                      <p class="table-item_text">5</p>
+                    </div>
+                    <div class="table-item_row">
+                      <p class="table-item_text" id="table-grey-text">Price <span>AED</span></p>
+                      <p class="table-item_text">399</p>
+                      <p class="table-item_text">799</p>
+                      <p class="table-item_text">1199</p>
+                    </div>
+                  </div>
+                  <div class="table-item">
+                    <p class="table-item_title">Cinema Max</p>
+                    <div class="table-item_row">
+                      <p class="table-item_text" id="table-grey-text">Hours</p>
+                      <p class="table-item_text">1</p>
+                      <p class="table-item_text">3</p>
+                      <p class="table-item_text">5</p>
+                    </div>
+                    <div class="table-item_row">
+                      <p class="table-item_text" id="table-grey-text">Price <span>AED</span></p>
+                      <p class="table-item_text">399</p>
+                      <p class="table-item_text">799</p>
+                      <p class="table-item_text">1199</p>
+                    </div>
+                  </div>
+                  <div class="table-item">
+                    <p class="table-item_title">Stream</p>
+                    <div class="table-item_row">
+                      <p class="table-item_text" id="table-grey-text">Hours</p>
+                      <p class="table-item_text">1</p>
+                      <p class="table-item_text">3</p>
+                      <p class="table-item_text">5</p>
+                    </div>
+                    <div class="table-item_row">
+                      <p class="table-item_text" id="table-grey-text">Price <span>AED</span></p>
+                      <p class="table-item_text">399</p>
+                      <p class="table-item_text">799</p>
+                      <p class="table-item_text">1199</p>
+                    </div>
+                  </div>
+                  <div class="table-item">
+                    <p class="table-item_title">Stream Max</p>
+                    <div class="table-item_row">
+                      <p class="table-item_text" id="table-grey-text">Hours</p>
+                      <p class="table-item_text">1</p>
+                      <p class="table-item_text">3</p>
+                      <p class="table-item_text">5</p>
+                    </div>
+                    <div class="table-item_row">
+                      <p class="table-item_text" id="table-grey-text">Price <span>AED</span></p>
+                      <p class="table-item_text">399</p>
+                      <p class="table-item_text">799</p>
+                      <p class="table-item_text">1199</p>
+                    </div>
+                  </div>
+                  <div class="table-item">
+                    <p class="table-item_title">Company room <span></br>2 room's</span></p>
+                    <div class="table-item_row">
+                      <p class="table-item_text" id="table-grey-text">Hours</p>
+                      <p class="table-item_text">1</p>
+                      <p class="table-item_text">3</p>
+                      <p class="table-item_text">5</p>
+                    </div>
+                    <div class="table-item_row">
+                      <p class="table-item_text" id="table-grey-text">Price <span>AED</span></p>
+                      <p class="table-item_text">399</p>
+                      <p class="table-item_text">799</p>
+                      <p class="table-item_text">1199</p>
+                    </div>
+                  </div>
+                  <div class="table-item">
+                    <p class="table-item_title">Bootcamp<span></br>2 room's</span></p>
+                    <div class="table-item_row">
+                      <p class="table-item_text" id="table-grey-text">Hours</p>
+                      <p class="table-item_text">1</p>
+                      <p class="table-item_text">3</p>
+                      <p class="table-item_text">5</p>
+                    </div>
+                    <div class="table-item_row">
+                      <p class="table-item_text" id="table-grey-text">Price <span>AED</span></p>
+                      <p class="table-item_text">399</p>
+                      <p class="table-item_text">799</p>
+                      <p class="table-item_text">1199</p>
+                    </div>
+                  </div>
+                  <div class="table-item">
+                    <p class="table-item_title">Mafia room</p>
+                    <div class="table-item_row">
+                      <p class="table-item_text" id="table-grey-text">Hours</p>
+                      <p class="table-item_text">1</p>
+                      <p class="table-item_text">3</p>
+                      <p class="table-item_text">5</p>
+                    </div>
+                    <div class="table-item_row">
+                      <p class="table-item_text" id="table-grey-text">Price <span>AED</span></p>
+                      <p class="table-item_text">399</p>
+                      <p class="table-item_text">799</p>
+                      <p class="table-item_text">1199</p>
+                    </div>
+                  </div>
+                  <div class="table-item" id="coming-soon-item">
+                    <p class="table-item_title">Night</p>
+                    <p class="soon">Coming soon</p>
+                  </div>
+              </div>
+            </div>
+            <div class="packages-bg">
+              <div class="packages-bg_gradient"></div>
+            </div>
+          </div>
+
           <div class="wrap_map">
             <div id="map"></div>
           </div>
@@ -148,16 +347,17 @@
       </div>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
       <script type="text/javascript" src="./public/scripts/three.min.js"></script>
-      <script type="text/javascript" src="./public/scripts/sphere.js"></script>
-      <script type="text/javascript" src="./public/scripts/three.min.js"></script>
-      <script type="text/javascript" src="./public/scripts/sphere.js"></script>
+      <script type="text/javascript" src="./public/scripts/sphere.js"></script> 
+      <script type="text/javascript" src="./public/scripts/spacesTranslation.js"></script>
+      <script type="text/javascript" src="./public/scripts/spaceBackground.js"></script>
+      <script type="text/javascript" src="./public/scripts/packagesGradientRotate.js"></script>
       <script type="text/javascript" src="./public/scripts/skrollr.min.js"></script>
-      <script type="text/javascript">
+      <!-- <script type="text/javascript">
         var s = skrollr.init({
             smoothScrolling: true,
             smoothScrollingDuration: 8000
         });
-      </script>
+      </script> -->
       <script type="text/javascript" src="./public/scripts/neonTextAnimation.js"></script>
       <script type="text/javascript" src="./public/scripts/popcornImageTransform.js"></script>
       <!-- <script src="https://api-maps.yandex.ru/2.0/?load=package.standard,package.geoObjects&lang=ru-RU" type="text/javascript"></script>
@@ -188,7 +388,7 @@
 
 }
 </script> -->
-      <script type="text/javascript">
+      <!-- <script type="text/javascript">
         function initMap() {
             var coordinates = {lat: 25.077097631716903, lng: 55.13445435061175}
 
@@ -205,6 +405,6 @@
             });
         }
       </script>
-      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjKiiRhiYjzSxu_VHWIG3SK7YkZUlt08g&callback=initMap"></script> 
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjKiiRhiYjzSxu_VHWIG3SK7YkZUlt08g&callback=initMap"></script>  -->
   </body>
 </html>

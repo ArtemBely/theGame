@@ -34,13 +34,18 @@
 	font-weight: normal;
 	font-style: normal;
 }
+@font-face {
+	font-family: 'Montserrat-Regular';
+	src: url('../fonts/Montserrat-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
 body {
 	padding: 0;
 	margin: 0;
 	border: 0;
 	font-family: 'Inter-Regular';
 	background: #000000;
-	overflow-x: hidden;
 }
 
 body.preview {
@@ -59,7 +64,8 @@ button {
   display: grid;
   justify-content: center;
   background-color: #000000;
-	overflow-x: hidden;
+	contain: paint;
+	isolation: isolate;
 }
 .firstScreen {
     background: url('../images/Group 60.png');
@@ -367,6 +373,225 @@ button {
 	position: relative;
 	margin-top: 430px;
 }
+
+.small-title {
+	font-family: 'Montserrat-Bold', sans-serif;
+	font-size: 60px;
+}
+
+.spaces-scroll {
+	height: 300vh;
+	position: relative;
+}
+
+.wrap_spaces {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: 100px;
+	padding-bottom: 100px;
+	width: 100%;
+	position: sticky;
+	top: 0px;
+}
+
+.spaces {
+	position: relative;
+	z-index: 1;
+	width: 1200px;
+}
+.computers {
+	padding: 74px;
+	background: linear-gradient(180deg, #282258 50%, rgba(118, 165, 255, 0) 100%);
+	backdrop-filter: blur(15px);
+	display: grid;
+	grid-template-columns: repeat(4, 475px);
+	grid-template-rows: 200px auto; 
+	grid-gap: 30px;
+	min-width: 2138px;
+	position: relative;
+	left: 0;
+	z-index: 1;
+}
+
+.computers-item {
+	padding: 45px;
+	background: #000D16;
+	border-radius: 10px;
+	min-height: 200px;
+	color: #fff;
+}
+
+.large-item {
+	grid-row: 1 / 3;	
+}
+
+.prefix {
+	font-family: 'Montserrat-Bold', sans-serif;
+	color: rgb(187, 190, 255);
+}
+
+.soon {
+	font-size: 40px;
+	font-family: 'Montserrat-Regular', sans-serif;
+	margin-block-end: 0;
+	margin-block-start: 10px;
+	color: #808080;
+}
+
+#spaces-title {
+	position: relative;
+	left: 350px;
+}
+
+.item-title {
+	font-family: 'Montserrat-Bold', sans-serif;
+	font-size: 40px;
+	line-height: 140%;
+	margin-block-start: 0;
+	margin-block-end: 0;
+}
+
+.item-text {
+	font-family: 'Inter-Regular' ,sans-serif;
+	font-size: 25px;
+	line-height: 160%;
+	margin-block-start: 0.25em;
+	margin-block-end: 0.25em;
+}
+
+#pre-title {
+	max-width: 255px;
+}
+
+.cp-characters {
+	margin: 25px 0;
+	display: grid;
+	grid-template-columns: 120px 1fr;
+	grid-column-gap: 25px;
+	grid-auto-rows: 40px;
+}
+
+.cp-characters > p:nth-child(2n+1) {
+	color: #BBBEFF;
+}
+
+.spaces-bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 0;
+}
+
+.wrap_packages {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 200px 0; 
+	position: relative;
+	isolation: isolate;
+}
+
+.packages {
+	width: 1218px;
+}
+.packages-bg {
+	position: absolute;
+	left: 0;top: 0;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+	transform: rotate(25deg);
+	transition: transform 100ms ease;
+}
+
+.packages-bg_gradient {
+	background: radial-gradient(59.29% 27.26% at 50% 50%, #FF7A00 0%, #FF7A00 0.01%, rgba(255, 182, 140, 0.79) 40.62%, rgba(255, 0, 153, 0) 100%, rgba(255, 0, 153, 0.45) 100%);
+	mix-blend-mode: exclusion;
+	filter: blur(200px);
+	height: 700px;
+	width: 100%;
+}
+
+.packages-bg.rotated {
+	transform: rotate(0);
+}
+
+.packages-table {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-auto-rows: max-content;
+	grid-gap: 25px;
+	border-radius: 10px;
+	padding: 74px;
+	width: 100%;
+	background: linear-gradient(180deg, #582222 0%, rgba(137, 118, 255, 0) 100%);
+	backdrop-filter: blur(15px);
+	position: relative;
+	z-index: 2;
+	opacity: 0.8;
+	mix-blend-mode: screen;
+}
+
+.table-item {
+	mix-blend-mode: screen;
+	background: #16121D;
+	color: #fff;
+	padding: 45px;
+	border-radius: 10px;
+}
+
+.table-item p {
+	margin-block-start: 0;
+	margin-block-end: 1rem;
+}
+
+.table-item_title {
+	font-family: 'Montserrat-Bold';
+	font-size: 40px;
+	line-height: 49px;
+}
+
+.table-item_title > span {
+	font-family: 'Inter-Regular';
+}
+
+.table-item_row {
+	display: flex;
+}
+.table-item_row:last-child p {
+	margin-block-end: 0;
+}
+.table-item_text {
+	flex: 1;
+	font-size: 25px;	
+}
+#table-grey-text {
+	flex: 3;
+	color: #808080;
+	font-family: 'Inter-Bold';
+}
+
+#table-grey-text > span {
+	font-family: 'Inter-Regular';
+}
+
+#coming-soon-item {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin-right: 10%;
+}
+
+#coming-soon-item .soon {
+	margin-block-end: 0;
+}
+
 .wrap_map {
 	position: relative;
 	top: 100px;

@@ -1,6 +1,4 @@
-window.onload = () => {
-  document.body.pageYOffset = 0;
-}
+
 
 
 //Compute Tangents
@@ -205,7 +203,6 @@ const material = new THREE.RawShaderMaterial({
 });
 
 const sphere = new THREE.Mesh(geometry, material);
-console.log(geometry);
 
 scene.add(sphere);
 
