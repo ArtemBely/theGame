@@ -91,6 +91,10 @@
 }
 
 @media screen and (max-width: 576px) {
+  .firstScreen {
+    width: 576px;
+  }
+
   .secondScreen, .thirdScreen, .fithScreen, .sixthScreen, .seventhScreen {
     width: 278px;
   }
@@ -101,15 +105,17 @@
     width: 200px;
   }
   .firstScreen {
-    width: 100%;
+    width: 1000px;
+    height: auto;
     background: none;
+    position: relative;
   }
   #mobile_fone {
     display: block;
     margin: 0;
-    position: absolute;
-    right: -136px;
-    top: 130px;
+    height: 870px;
+    position: relative;
+    top: -200px; 
   }
   .mobile_book > a {
     text-decoration: none;

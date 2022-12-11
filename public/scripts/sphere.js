@@ -1,6 +1,3 @@
-
-
-
 //Compute Tangents
 THREE.BufferGeometry.prototype.computeTangents = function () {
   var index = this.index;
@@ -183,7 +180,7 @@ const uniforms = {
     ),
   },
 
-  uFresnelOffset: { value: -1.5 },
+  uFresnelOffset: { value: -1.609 },
   uFresnelMultiplier: { value: 3.587 },
   uFresnelPower: { value: 1.7 },
 
@@ -311,6 +308,7 @@ window.addEventListener('resize', () => {
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 });
 
+
 /**
  * Sphere zoom
  */
@@ -338,14 +336,14 @@ const tick = () => {
   material.uniforms.uTime.value = elapsedTime;
   overlayMaterial.uniforms.uTime.value = elapsedTime;
 
-
   if(camera.position.z === 1.0) {
     document.body.classList.remove('preview')
   }
 
   // Render
-  renderer.setClearColor(0x000000, 0);
   renderer.render(scene, camera);
+  // effectComposer.render();
+  renderer.setClearColor(0x000000, 0);
 
   // Call tick again on the next frame
   requestAnimationFrame(tick);

@@ -143,9 +143,6 @@
   .wrap_map {
     margin-bottom: 900px;
   }
-  #map {
-    width: 1290px;
-  }
 }
 
 @media (min-width: 992px) and (max-width: 1290px) {

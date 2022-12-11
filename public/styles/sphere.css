@@ -21,7 +21,7 @@
   box-sizing: border-box;
 }
 
-.preview .preview_wrap {
+/* .preview .preview_wrap {
   display: flex;
   justify-content: center;
   background-image: url(../images/background.png);
@@ -33,7 +33,7 @@
   top: 0;
   z-index: 4;
   width: 100vw;
-}
+} */
 
 .preview_wrap {
   display: none;
@@ -313,13 +313,16 @@
 	.overlay-text {
 		font-size: 25px;
 	}
+  .mobile-text_wrap {
+    bottom: 90px;
+  }
 	.mobile-text {
 		padding: 0 10px;
 		width: 100%;
 		max-width: 280px;
 	}
 	.img-sand {
-		width: 1600px;
+		width: 350%;
 		left: -100%;
 	}
 }

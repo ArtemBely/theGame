@@ -5,8 +5,8 @@
   let planeMesh;
   let stars = [];
   let sizes = {
-    width: window.innerWidth, 
-    height: window.innerHeight,
+    width: bg.offsetParent.clientWidth, 
+    height: bg.offsetParent.clientHeight,
   };
   let colors = [
     "#0952BD",

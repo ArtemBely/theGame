@@ -65,7 +65,11 @@ button {
   justify-content: center;
   background-color: #000000;
 	contain: paint;
-	isolation: isolate;
+}
+.wrap_firstScreen {
+	width: 100%;
+	display: flex;
+	justify-content: center;
 }
 .firstScreen {
     background: url('../images/Group 60.png');
@@ -507,7 +511,7 @@ button {
 	align-items: center;
 	z-index: 1;
 	transform: rotate(25deg);
-	transition: transform 100ms ease;
+	transition: transform 500ms ease;
 }
 
 .packages-bg_gradient {

@@ -4,8 +4,7 @@
 
   window.addEventListener('scroll', function() {
     let currentPosition = elem.offsetTop;
-    let parentEnd = elem.offsetParent.offsetHeight - elem.offsetHeight;
-
-    computers.style.left = `-${currentPosition / 10}%`;
+    
+    computers.style.left = `-${currentPosition / 2}px`;
   })
 })();
