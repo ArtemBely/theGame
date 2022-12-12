@@ -147,7 +147,7 @@
 
 @media (min-width: 992px) and (max-width: 1290px) {
   body {
-    -moz-transform: scale(0.78, 0.78); 
+    -moz-transform: scale(0.78, 0.78);
     zoom: 0.78; /* Other non-webkit browsers */
     zoom: 78%; /* Webkit browsers */
   }
