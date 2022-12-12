@@ -13,7 +13,7 @@
     height: auto;
   }
   .ninthScreen {
-        width: 4500px;
+    width: 4500px;
   }
   .below_designImgs {
     width: 1160px;
@@ -71,7 +71,7 @@
   #title1_spec {
         width: 475px;
   }
-  .fourthScreen, .fithScreen, .sixthScreen, .seventhScreen, .footer {
+  .thirdScreen, .fourthScreen, .fithScreen, .sixthScreen, .seventhScreen, .footer {
     width: 2350px;
 }
   .footer {
@@ -82,9 +82,6 @@
   #friends_txt {
     margin-top: 9px;
     width: 1398px;
-}
-#more_hookah {
-      top: 304px
 }
 .wrap_location {
     grid-column: 5 / 6;
@@ -100,6 +97,19 @@
     grid-column: 4 / 5;
     grid-row: 2 / 3;
 }
+.wrap_popcorn {
+  width: 2350px;
+  height: 810px;
+}
+#cola {
+  left: 0;
+}
+#cola > img{
+  height: 662px;
+}
+#popcorn > img{
+  height: 1160px;
+}
 #year {
     grid-column: 5 / 6;
     grid-row: 3 / 4;
@@ -107,6 +117,14 @@
     position: relative;
     left: 218px;
     top: 50px;
+}
+.wrap_map {
+  top: 400px;
+  margin-bottom: 900px;
+}
+#map {
+  width: 3840px;
+  height: 1877px;
 }
 .wrap_book2 {
     grid-column: 6 / 7;
@@ -145,22 +163,33 @@
   -webkit-text-stroke-width: 2px;
 }
 .wrap_hookah > img {
-    width: 3036px;
+  height: 150%;
+  top: -300px;
 }
-  .txt1 {
-    font-size: 50px;
-    line-height: 160%;
-    color: #D9D9D9;
+.wrap_hookah {
+  left: 90px;
+  width: 1500px;
+  height: 975px;
+  top: -100px;
+}
+.wrap_ember {
+  width: 3200px;
+  top: -115px;
+}
+.txt1 {
+  font-size: 50px;
+  line-height: 160%;
+  color: #D9D9D9;
 }
 .firstGradient {
       width: 1755px;
 }
 .wrap_seventhScreen {
-    margin-top: 2277px;
+    margin-top: 2570px;
 }
 .wrap_sixthScreen {
     position: relative;
-    top: 1920px;
+    top: 1700px;
 }
 #txt2 {
     top: -454px;
@@ -240,9 +269,6 @@
     height: 1200px;
     position: relative;
     margin-top: 410px;
-}
-.wrap_map {
-  height: 1877px;
 }
 .quest_btn {
     width: 676px;
