@@ -519,7 +519,7 @@ button {
 	mix-blend-mode: exclusion;
 	filter: blur(200px);
 	height: 700px;
-	width: 100%;
+	width: 1920px;
 }
 
 .packages-bg.rotated {

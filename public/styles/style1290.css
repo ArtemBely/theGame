@@ -143,6 +143,9 @@
   .wrap_map {
     margin-bottom: 900px;
   }
+  .spaces-scroll {
+    height: 2625px;
+  }
 }
 
 @media (min-width: 992px) and (max-width: 1290px) {
