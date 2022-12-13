@@ -40,6 +40,39 @@
 	font-weight: normal;
 	font-style: normal;
 }
+
+.load-wrap {
+	background: #000;
+	position: fixed;
+	top: 0;left: 0;bottom: 0;right: 0;
+	z-index: 5;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.load {
+	width: 100px;
+	height: 100px;
+	position: relative;
+}
+
+.load hr{background: none;border:5px solid #574137;margin:0;width:40%;height:40%;position: absolute;border-radius:50%;animation:spin 2s ease infinite}
+
+.load :first-child{animation-delay:-1.5s}
+.load :nth-child(2){animation-delay:-1s}
+.load :nth-child(3){animation-delay:-0.5s}
+
+@keyframes spin{
+  0%,100%{transform:translate(0)}
+  25%{transform:translate(160%)}
+  50%{transform:translate(160%, 160%)}
+  75%{transform:translate(0, 160%)}
+}
+.load-wrap.loaded {
+	display: none;
+}
+
 body {
 	padding: 0;
 	margin: 0;
@@ -78,7 +111,12 @@ button {
     height: 140vh;
     background-size: cover;
 		filter: blur(5px);
-		transition: filter 2s ease-in-out;
+		transition: all 1.3s ease-in-out;
+		transform: scale(1.2);
+}
+.firstScreen.opened {
+	filter: blur(0);
+	transform: scale(1);
 }
 .wrap_logo {
   display: flex;

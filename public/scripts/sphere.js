@@ -160,18 +160,55 @@ const canvas = document.querySelector('canvas.webgl');
 const scene = new THREE.Scene();
 
 /**
+ * Sizes
+ */
+const sizes = {
+  width: window.innerWidth,
+  height: window.innerHeight,
+};
+
+/**
+ * Camera
+ */
+// Base camera
+const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100);
+// const camera = new THREE.OrthographicCamera(sizes.width / -2, sizes.width / 2, sizes.height / -2, sizes.height / 2, 0.1, 1000);
+scene.add(camera);
+
+const viewMatrixCamera = camera.matrixWorldInverse.clone()
+const projectionMatrixCamera = camera.projectionMatrix.clone()
+const modelMatrixCamera = camera.matrixWorld.clone()
+
+const projPosition = camera.position.clone()
+
+
+
+const loadingManager = new THREE.LoadingManager(
+  () => {
+    const preloader = document.querySelector('.load-wrap')
+    preloader.classList.add('loaded')
+  }
+)
+
+
+// Texture
+const textureLoader = new THREE.TextureLoader(loadingManager);
+const texture = textureLoader.load("public/images/sphere_bg.png");
+textureLoader.setCrossOrigin('anonymous');
+texture.flipY = false;
+
+/**
  * Object
  */
 const geometry = new THREE.SphereBufferGeometry(1, 512, 512);
 geometry.computeTangents();
 
 const uniforms = {
-  uFrequncy: { value: 5 },
   uTime: { value: 0.2 },
   uDistortionFrequency: { value: 2 },
-  uDistortionStrngth: { value: 1 },
+  uDistortionStrngth: { value: 1.2 },
   uDisplacementFrequency: { value: 2 },
-  uDisplacementStrngth: { value: 0.28 },
+  uDisplacementStrngth: { value: 0.23 },
 
   uSubdivision: {
     value: new THREE.Vector2(
@@ -187,13 +224,16 @@ const uniforms = {
   uLightColor: { value: new THREE.Vector4(2.37, 2.25, 1.58, 1.0) },
   uLightAPosition: { value: new THREE.Vector3(1.0, 1.0, 0.0) },
   uLightBPosition: { value: new THREE.Vector3(-1.0, -5.0, 0.0) },
+
+  uTexture: {type: 't', value: texture},
+  viewMatrixCamera: { type: 'm4', value: viewMatrixCamera },
+  projectionMatrixCamera: { type: 'm4', value: projectionMatrixCamera },
+  modelMatrixCamera: { type: 'mat4', value: modelMatrixCamera },
+  savedModelMatrix: { type: 'mat4', value: new THREE.Matrix4() },
+  projPosition: { type: 'v3', value: projPosition },
 }
 
-const overlayUniforms = Object.assign({}, uniforms);
-
-
 const material = new THREE.RawShaderMaterial({
-  transparent: true,
   uniforms: uniforms,
   vertexShader: getVertexShader(),
   fragmentShader: getFragmentShader(),
@@ -203,90 +243,10 @@ const sphere = new THREE.Mesh(geometry, material);
 
 scene.add(sphere);
 
-
-
-/**
- * Sphere image
- */
-  const overlayParameters = {
-    fullScreen: {
-      phiStart: -3.89,
-      phiSegments: 4.6,
-      thetaStart: 0, 
-      thetaSegments: 3.7
-    }
-  }
-
-// Texture
- const textureLoader = new THREE.TextureLoader();
- const texture = textureLoader.load("public/images/sphere_bg.png");
- textureLoader.setCrossOrigin('anonymous');
-
-
-
-// Mesh
- const overlayGeometry = new THREE.SphereBufferGeometry(
-  0.99,
-  512, 
-  512, 
-  overlayParameters.fullScreen.phiStart, 
-  overlayParameters.fullScreen.phiSegments, 
-  overlayParameters.fullScreen.thetaStart,
-  overlayParameters.fullScreen.thetaSegments,);
-
- const overlayMaterial = new THREE.RawShaderMaterial({ 
-  uniforms: {
-    uFrequncy: { value: 5 },
-    uTime: { value: 0.2 },
-    uDistortionFrequency: { value: 2 },
-    uDistortionStrngth: { value: 1 },
-    uDisplacementFrequency: { value: 2 },
-    uDisplacementStrngth: { value: 0.28 },
-  
-    uSubdivision: {
-      value: new THREE.Vector2(
-        geometry.parameters.widthSegments,
-        geometry.parameters.heightSegments,
-      ),
-    },
-
-    uTexture: {type: 't', value: texture},
-  },
-  vertexShader: `${getVertexShader()}`,
-  fragmentShader: `
-    precision mediump float;
-
-    uniform sampler2D uTexture;
-    varying vec3 vNormal;
-    varying vec2 vUv;
-
-
-    void main() {
-      gl_FragColor = texture2D(uTexture, vUv);
-    }
-  `
- })
-
-overlayMaterial.side = THREE.DoubleSide;
-
-const overlay = new THREE.Mesh(overlayGeometry, overlayMaterial);
-scene.add(overlay);
-
-/**
- * Sizes
- */
-const sizes = {
-  width: window.innerWidth,
-  height: window.innerHeight,
-};
-
-/**
- * Camera
- */
-// Base camera
-const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100);
-camera.position.z = 2.8;
-scene.add(camera);
+camera.updateProjectionMatrix()
+camera.updateMatrixWorld()
+camera.updateWorldMatrix()
+camera.position.z = 2.5
 
 /**
  * Renderer
@@ -312,17 +272,29 @@ window.addEventListener('resize', () => {
 /**
  * Sphere zoom
  */
-window.addEventListener('mousewheel', () => {
-  gsap.to(camera.position, {duration : 0.3, delay: 0.1, z : 1.0}) 
 
-  const imgSand = document.querySelector('.img-sand');
-  imgSand.style.opacity = 0.5
-  imgSand.style.zIndex = 0;
+function sphereZoom() {
+  gsap.to(camera.position, {duration : 0.25, delay: 0.1, z : 1.15})
 
   const firstScreen = document.querySelector('.firstScreen');
-  firstScreen.style.filter = 'blur(0px)' 
+  firstScreen.classList.add('opened') 
   canvas.style.zIndex = 4;
-})
+} 
+
+if (window.addEventListener)
+{
+    // IE9, Chrome, Safari, Opera
+    window.addEventListener("mousewheel", sphereZoom, false);
+    // Firefox
+    window.addEventListener("DOMMouseScroll", sphereZoom, false);
+}
+// IE 6/7/8
+else
+{
+    window.attachEvent("onmousewheel", sphereZoom);
+}
+
+
 
 /**
  * Animate
@@ -334,10 +306,10 @@ const tick = () => {
 
   // Update materials
   material.uniforms.uTime.value = elapsedTime;
-  overlayMaterial.uniforms.uTime.value = elapsedTime;
 
-  if(camera.position.z === 1.0) {
+  if(camera.position.z === 1.15) {
     document.body.classList.remove('preview')
+    return;
   }
 
   // Render
@@ -356,8 +328,25 @@ function getFragmentShader() {
   precision mediump float;
   varying vec4 vColor; 
 
+  uniform sampler2D uTexture;
+  uniform vec4 uLightColor;
+
+  varying vec4 vWorldPosition;
+  varying vec4 vTexCoords;
+  varying float vFresnel;
+  varying float vLightAIntensity;
+  varying float vLightBIntensity;
+
     void main() {
-        gl_FragColor = vColor;
+      vec2 uv = (vTexCoords.xy / vTexCoords.w) * 0.5 + 0.5;
+
+          vec4 color = texture2D(uTexture, uv);
+
+          color = mix(color, uLightColor, vLightAIntensity * vFresnel * 1.5);
+          color = mix(color, uLightColor, vLightBIntensity * vFresnel * 1.5);
+          color = mix(color, vec4(1.0), clamp(pow(max(0.0, vFresnel - 0.8), 3.0), 0.0, 1.0));
+
+          gl_FragColor = color;
     }
     `;
 }
@@ -369,6 +358,7 @@ function getVertexShader() {
     uniform mat4 projectionMatrix;
     uniform mat4 viewMatrix;
     uniform mat4 modelMatrix;
+    uniform mat4 savedModelMatrix;
     
     uniform float uFrequncy;
     uniform float uTime;
@@ -399,6 +389,16 @@ function getVertexShader() {
     varying float vPerlinStrength;
     varying vec4 vColor;
     varying vec2 vUv;
+    varying float vFresnel;
+    varying float vLightAIntensity;
+    varying float vLightBIntensity;
+
+    uniform mat4 viewMatrixCamera;
+    uniform mat4 projectionMatrixCamera;
+    uniform mat4 modelMatrixCamera;
+
+    varying vec4 vWorldPosition;
+    varying vec4 vTexCoords;
     
     vec4 permute(vec4 x){return mod(((x*34.0)+1.0)*x, 289.0);}
 vec4 taylorInvSqrt(vec4 r){return 1.79284291400159 - 0.85373472095314 * r;}
@@ -547,12 +547,8 @@ vec3 getDisplacedPosition(vec3 _position) {
     vec3 displacedPosition = _position;
     displacedPosition += perlinStrength * normalize(_position) * uDisplacementStrngth;
 
-    vPerlinStrength = perlinStrength;
-
     return displacedPosition;
 }
-
-    varying vec3 vDisplacedPosition;
     
     void main() {
     
@@ -561,8 +557,6 @@ vec3 getDisplacedPosition(vec3 _position) {
         vec4 viewPosition = viewMatrix * vec4(displacedPosition, 1.0);
         vec4 projectedPosition = projectionMatrix * viewPosition;
         gl_Position = projectedPosition;
-
-        vDisplacedPosition = displacedPosition; 
     
         // Bi tangents
         float distanceA = (M_PI * 2.0) / uSubdivision.x;
@@ -589,16 +583,12 @@ vec3 getDisplacedPosition(vec3 _position) {
     
         float lightAIntensity = max(0.0, dot(computedNormal.xyz, normalize(- uLightAPosition)));
         float lightBIntensity = max(0.0, dot(computedNormal.xyz, normalize(- uLightBPosition)));
-        
-        vec4 color = vec4(0.0, 0.0, 0.0, 0.4);
-        color = mix(color, uLightColor, lightAIntensity * fresnel * 1.5);
-        color = mix(color, uLightColor, lightBIntensity * fresnel * 1.5);
-        color = mix(color, vec4(1.0), clamp(pow(max(0.0, fresnel - 0.8), 3.0), 0.0, 1.0));
-    
-    
-        vNormal = normal;
-        vColor = color;
-        vUv = uv;
+
+        vWorldPosition = savedModelMatrix * vec4(position, 1.0);
+        vTexCoords = projectionMatrixCamera * viewMatrixCamera * vWorldPosition;
+        vFresnel = fresnel;
+        vLightAIntensity = lightAIntensity;
+        vLightBIntensity = lightBIntensity;
     }
     `;
 }
