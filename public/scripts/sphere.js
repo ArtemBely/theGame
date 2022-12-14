@@ -182,7 +182,7 @@ const modelMatrixCamera = camera.matrixWorld.clone()
 const projPosition = camera.position.clone()
 
 
-
+//Load Texture
 const loadingManager = new THREE.LoadingManager(
   () => {
     const preloader = document.querySelector('.load-wrap')
@@ -190,11 +190,9 @@ const loadingManager = new THREE.LoadingManager(
   }
 )
 
-
 // Texture
 const textureLoader = new THREE.TextureLoader(loadingManager);
 const texture = textureLoader.load("public/images/sphere_bg.png");
-textureLoader.setCrossOrigin('anonymous');
 texture.flipY = false;
 
 /**
@@ -205,6 +203,8 @@ geometry.computeTangents();
 
 const uniforms = {
   uTime: { value: 0.2 },
+  uZLimit : { value: 0.89 },
+
   uDistortionFrequency: { value: 2 },
   uDistortionStrngth: { value: 1.2 },
   uDisplacementFrequency: { value: 2 },
@@ -219,7 +219,7 @@ const uniforms = {
 
   uFresnelOffset: { value: -1.609 },
   uFresnelMultiplier: { value: 3.587 },
-  uFresnelPower: { value: 1.7 },
+  uFresnelPower: { value: 1.793 },
 
   uLightColor: { value: new THREE.Vector4(2.37, 2.25, 1.58, 1.0) },
   uLightAPosition: { value: new THREE.Vector3(1.0, 1.0, 0.0) },
@@ -284,7 +284,7 @@ function sphereZoom() {
 if (window.addEventListener)
 {
     // IE9, Chrome, Safari, Opera
-    window.addEventListener("mousewheel", sphereZoom, false);
+    window.addEventListener("wheel", sphereZoom, false);
     // Firefox
     window.addEventListener("DOMMouseScroll", sphereZoom, false);
 }
@@ -292,6 +292,7 @@ if (window.addEventListener)
 else
 {
     window.attachEvent("onmousewheel", sphereZoom);
+    window.addEventListener('touchmove', sphereZoom);
 }
 
 
@@ -360,8 +361,8 @@ function getVertexShader() {
     uniform mat4 modelMatrix;
     uniform mat4 savedModelMatrix;
     
-    uniform float uFrequncy;
     uniform float uTime;
+    uniform float uZLimit; 
     
     uniform float uDisplacementStrngth;
     uniform float uDisplacementFrequency;
@@ -539,13 +540,18 @@ float perlin4d(vec4 P){
 
 
 vec3 getDisplacedPosition(vec3 _position) {
-      vec3 displacementPosition = _position;
+    vec3 displacementPosition = _position;
+
     displacementPosition += perlin4d(vec4(displacementPosition * uDistortionFrequency, uTime * 0.4)) * uDisplacementStrngth;
 
     float perlinStrength = perlin4d(vec4(displacementPosition * uDisplacementFrequency, uTime * 0.4)) * uDisplacementStrngth;
     
     vec3 displacedPosition = _position;
     displacedPosition += perlinStrength * normalize(_position) * uDisplacementStrngth;
+
+    if(displacedPosition.z > uZLimit) {
+      displacedPosition.z = uZLimit;
+    }
 
     return displacedPosition;
 }

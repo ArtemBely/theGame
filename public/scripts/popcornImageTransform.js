@@ -1,19 +1,20 @@
 (function () {
   const wrapPopcorn = document.querySelector('.wrap_popcorn');
+  const colaImg = document.querySelector('#cola')
 
-  let options = {rootMargin: '-500px 0px -100px 0px', threshold: 0}
+  let options = { 
+    threshold: 0
+  }
 
-  const popcornTransform = (entries, observer) => {
+  const popcornTransform = (entries) => {
     entries.forEach(entry => {
-      if(entry.isIntersecting) {
+      if(entry.isIntersecting && !wrapPopcorn.classList.contains('js-popcorn-active')) {
         wrapPopcorn.classList.add('js-popcorn-active')
-      } else {
-        wrapPopcorn.classList.remove('js-popcorn-active')
-      }
+      } 
     })
   }
 
   const imgObserver = new IntersectionObserver(popcornTransform, options)
 
-  imgObserver.observe(wrapPopcorn)
+  imgObserver.observe(colaImg)
 })()
