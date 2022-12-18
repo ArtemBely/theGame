@@ -1,24 +1,19 @@
 @font-face {
 	font-family: 'Inter-Regular';
-	src: url('../fonts/Inter-Regular.eot');
-	src: url('../fonts/Inter-Regular.eot?#iefix') format('embedded-opentype'),
-	url('../fonts/Inter-Regular.woff') format('woff'),
+	src: url('../fonts/Inter-Regular.woff') format('woff'),
 	url('../fonts/Inter-Regular.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
 @font-face {
 	font-family: 'Inter-Bold';
-	src: url('../fonts/Inter-Bold.eot');
-	src: url('../fonts/Inter-Bold.eot?#iefix') format('embedded-opentype'),
-	url('../fonts/Inter-Bold.woff') format('woff'),
+	src: url('../fonts/Inter-Bold.woff') format('woff'),
 	url('../fonts/Inter-Bold.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
 @font-face {
 	font-family: 'Inter-LightBETA';
-	src: url('../fonts/Inter-LightBETA.eot');
 	src: url('../fonts/Inter-LightBETA.eot?#iefix') format('embedded-opentype'),
 	url('../fonts/Inter-LightBETA.woff') format('woff'),
 	url('../fonts/Inter-LightBETA.ttf') format('truetype');
@@ -27,7 +22,6 @@
 }
 @font-face {
 	font-family: 'Montserrat-Bold';
-	src: url('../fonts/Montserrat-Bold.eot');
 	src: url('../fonts/Montserrat-Bold.eot?#iefix') format('embedded-opentype'),
 	url('../fonts/Montserrat-Bold.woff') format('woff'),
 	url('../fonts/Montserrat-Bold.ttf') format('truetype');
@@ -105,17 +99,15 @@ button {
 	justify-content: center;
 }
 .firstScreen {
-    background: url('../images/Group 60.png');
+    background: url('../images/Group 60.jpeg');
     background-repeat: no-repeat;
     width: 100vw;
     height: 140vh;
     background-size: cover;
-		filter: blur(5px);
-		transition: all 1.3s ease-in-out;
-		transform: scale(1.2);
+		transition: all 0.5s ease-in-out;
+		transform: scale(1.07);
 }
 .firstScreen.opened {
-	filter: blur(0);
 	transform: scale(1);
 }
 .wrap_logo {

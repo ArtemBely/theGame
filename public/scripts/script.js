@@ -1,9 +1,7 @@
-const wrap = document.querySelector('.wrap_allScreens')
+ const img = new Image();
+ img.src = "./public/images/Group 60.jpeg";
 
-wrap.addEventListener('click', function() {
-  console.log(wrap.getBoundingClientRect().top) 
-})
-
-window.onload = function() {
-  wrap.scrollTo(0, 0);
-}
+  img.onload = () => { 
+    const loader = document.querySelector('.load-wrap');
+    loader.classList.add('loaded')
+   }

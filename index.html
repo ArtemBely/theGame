@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./public/styles/pre-mobile.css">
     <link rel="stylesheet" href="./public/styles/mobile.css">
   </head>
-  <body class="preview">
+  <body class="preview" id="skrollr-body">
     <div class="load-wrap">
       <div class="load">
         <hr/><hr/><hr/><hr/>
@@ -30,29 +30,28 @@
             <a class="overlay-link" id="long-link" href="#">Book Your Seat</a>
             <a class="overlay-link" id="short-link" href="#">Book</a>
           </div>
-          <p class="overlay-text" id="desktop-text">Let’s find</br> another</br> place</p>
+          <p class="overlay-text" id="desktop-text">Let's find</br> another</br> place</p>
           <p class="overlay-text right-part" id="desktop-text">Place for </br>relaxed </br>pastime</p>
         </div>
         <div class="scroll-notice">
           <img src="./public/images/bx_mouse.svg" alt="">
           <p class="notice-text">Scroll to Start</p>
-          <div class="notice-bar"></div>
         </div>
         <div class="mobile-text_wrap">
           <div class="mobile-text">
-            <p class="overlay-text">Let’s find </br>another place -</p>
+            <p class="overlay-text">Let's find </br>another place -</p>
             <p class="overlay-text right-part">place for relaxed </br>pastime</p>
           </div>
         </div>
       </div>
       <canvas class="webgl"></canvas> 
-      <img src="./public/images/1plan.png" class="img-sand"> 
+      <img class="img-sand" src="./public/images/1plan.png"> 
     </div> 
       <div class="wrap_allScreens">
         <div class="wrap_firstScreen">
           <div class="firstScreen" id="beginning">
             <p class="wrap_logo"><img src="./public/images/Logo.svg" /></p>
-            <img src="./public/images/mobile_first_bg.png" id='mobile_fone' />
+            <img src="./public/images/Group 60.jpeg" id='mobile_fone' />
           </div>
         </div>
           <div class="wrap_secondScreen">
@@ -62,17 +61,17 @@
                        <p class="txt1" id='relax_txt-mobile'>A nice place to relax or have a good time. Play games on the world's most powerful gaming computer or stream live from the Streaming Room.</p>
                        <button type="button" class="book_btn">Book Your Seat</button>
                    </div>
-                   <p class="wrap_book"><img src='./public/images/Group 61.png' /></p>
+                   <p class="wrap_book"><img src='./public/images/BigLogo.png'/></p>
                    <p class="txt1" id='relax_txt'>A nice place to relax or have a good time. Play games on the world's most powerful gaming computer or stream live from the Streaming Room.</p>
              </div>
           </div>
           <div class="wrap_thirdScreen">
               <div class="thirdScreen">
                   <div class="wrap_imgs1" data--100-top="left: -460px;" data-700-bottom="left: 0px;">
-                    <img src="./public/images/Cyber_Club_Vis_0006 1.png" class="each_imgs1"/>
-                    <img src="./public/images/Cyber_Club_Vis_0013.png" class="each_imgs1"/>
-                    <img src="./public/images/Cyber_Club_Vis_0009.png" class="each_imgs1"/>
-                    <img src="./public/images/Cyber_Club_Vis_0003.png" class="each_imgs1"/>
+                    <img src="./public/images/for_you_img1.png" class="each_imgs1"/>
+                    <img src="./public/images/for_you_img2.png" class="each_imgs1"/>
+                    <img src="./public/images/for_you_img3.png" class="each_imgs1"/>
+                    <img src="./public/images/for_you_img4.png" class="each_imgs1"/>
                   </div>
                   <p class="title1 firstGradient">.. for Your </p> <p class="title1 firstGradient" id='friends1'>Friends or Partners</p>
                   <p class="txt1" id='friends_txt'>Gather your friends together in one place. Have a buddy championship and we'll provide everything you need for it.</p>
@@ -83,7 +82,7 @@
                     <div class="wrap_forYou">
                           <p class="title2">.. and</p><p class="title2" id='for_lover'>for Your Lover</p>
                     </div>
-                    <p class="wrap_cinema"><img src='./public/images/image 2.png' id='cinema_desktop_fone' /> <img src="./public/images/image 2 mobile.png" id='cinema_mobile_fone'> </p>
+                    <p class="wrap_cinema"><img src='./public/images/cinema.png' id='cinema_desktop_fone' loading="lazy"/> <img src="./public/images/image 2 mobile.png" id='cinema_mobile_fone'> </p>
                     <p class="txt1" id='txt2'>The entire cinema is at your service. Whether it's a date for two or inviting a large group, any movie will be even more comfortable in our state-of-the-art cinema.</p>
                     <div class="mobile_book">
                           <a href="#">Book Your Seat</a>
@@ -93,11 +92,11 @@
           <div class="wrap_fithScreen">
               <div class="fithScreen">
                     <div class="wrap_designPhotos">
-                          <img src="./public/images/Cyber_Club_Vis_0007.png" class="below_designImgs desctop_img_version">
-                          <img src="./public/images/Cyber_Club_Vis_0008_mobile.png" class="below_designImgs mobile_img_version" id='first_mob'>
-                          <img src="./public/images/Cyber_Club_Vis_0008.png" class="below_designImgs secondDsgn desctop_img_version">
-                          <img src="./public/images/Cyber_Club_Vis_0007_mobile.png" class="below_designImgs mobile_img_version" id='second_mob'>
-                          <img src="./public/images/Cyber_Club_Vis_0005 1.png" class="below_designImgs thirdDsgn">
+                          <img loading="lazy" src="./public/images/Cyber_Club_Vis_0007.png" class="below_designImgs desctop_img_version">
+                          <img loading="lazy" src="./public/images/Cyber_Club_Vis_0008_mobile.png" class="below_designImgs mobile_img_version" id='first_mob'>
+                          <img loading="lazy" src="./public/images/Cyber_Club_Vis_0008.png" class="below_designImgs secondDsgn desctop_img_version">
+                          <img loading="lazy" src="./public/images/Cyber_Club_Vis_0007_mobile.png" class="below_designImgs mobile_img_version" id='second_mob'>
+                          <img loading="lazy" src="./public/images/Cyber_Club_Vis_0005 1.png" class="below_designImgs thirdDsgn">
                     </div>
                     <p class="neon_txt"><span class="neon_fone"></span>Your meeting place</p>
                     <img src="./public/images/Cyber_Club_Vis_0005 1.png" class="thirdDsgn_mobile">
@@ -324,18 +323,18 @@
           </div>
           <div class="wrap_ninthScreen">
               <div class="ninthScreen">
-                  <p class="wrap_auto first_wrap_auto"><img src="./public/images/Cyber_Club_Vis_0010 2.png" alt=""></p>
+                  <p class="wrap_auto first_wrap_auto"><img src="./public/images/computers-left.png" loading="lazy"></p>
                   <div class="wrap_center_msg">
                       <p class="title2" id='welcome_txt'>Welcome</p>
                       <p class="title2" id='welcome_txt_bellow'>to The Game</p>
                       <div class="wrap_book_seat_btn"><p class="book_seat_btn">Book Your Seat</p></div>
                       <p class="quest_btn">Do you have a question? Contact us:</p>
-                      <p class="msg_btn" id='tlgr_btn'> <img src="./public/images/akar-icons_telegram-fill.svg" alt=""> Telegram </p>
-                      <p class="msg_btn" id='wats_btn'> <img src="./public/images/akar-icons_whatsapp-fill.svg" alt=""> WhatsApp </p>
+                      <p class="msg_btn" id='tlgr_btn'> <img src="./public/images/akar-icons_telegram-fill.svg"> Telegram </p>
+                      <p class="msg_btn" id='wats_btn'> <img src="./public/images/akar-icons_whatsapp-fill.svg"> WhatsApp </p>
                       <p class="tel_btn">or call us <a href="tel:971 4 0000000"> +971 4 0000000</a></p>
                       <p class="tel_btn" id="mobile_tel">or call us <a href="tel:971 4 0000000"></br> +971 4 0000000</a></p>
                   </div>
-                  <p class="wrap_auto second_wrap_auto"><img src="./public/images/Cyber_Club_Vis_0010 1.png" alt=""></p>
+                  <p class="wrap_auto second_wrap_auto"><img src="./public/images/computers-right.png" loading="lazy"></p>
               </div>
           </div>
           <div class="wrap_footer">
@@ -343,9 +342,9 @@
                   <p class="wrap_footer_logo"><img src="./public/images/Vector.svg" alt="" id='footer_logo'> </p>
                   <p class="grey_footer_txt spec_grey2">The Game, LLC</p>
                   <p class="grey_footer_txt spec_grey2" id="street">JBR, Bahar 2</p>
-                  <p class="wrpa_insta"> <img src="./public/images/Vector — копия 2.svg" alt=""> </p>
+                  <p class="wrpa_insta"> <img src="./public/images/Vector_insta.svg" alt=""> </p>
                   <p class="wrap_about"> <img src="./public/images/Union.svg" class="social_footer"> <a href="#" class="footer_links">About</a> </p>
-                  <p class="wrap_location"><img src="./public/images/Vector — копия.svg" class="social_footer"> <a href="#" class="footer_links">Location</a> </p>
+                  <p class="wrap_location"><img src="./public/images/Vector_loc.svg" class="social_footer"> <a href="#" class="footer_links">Location</a> </p>
                   <p class="wrap_book2">+<a href="#" class="footer_links">Book</a></p>
                   <p class="made_in grey_footer_txt">Сайт сделан в <a href="https://acorn.ws" class="grey_footer_txt"> Acorn</a></p>
                   <p class="policy"><a href="#" class="grey_footer_txt">Privacy Policy</a></p>
@@ -355,34 +354,21 @@
       </div>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r105/three.min.js"></script>
-      <script type="text/javascript" src="./public/scripts/sphere.js"></script>  
-      <script type="text/javascript" src="./public/scripts/spacesTranslation.js"></script>
-      <script type="text/javascript" src="./public/scripts/spaceBackground.js"></script>
-      <script type="text/javascript" src="./public/scripts/packagesGradientRotate.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
+      <script type="text/javascript" src="./public/scripts/sphere.js"></script>  
+      <script type="text/javascript" src="./public/scripts/script.js"></script>
+      <script type="text/javascript" src="./public/scripts/scrollAnimationObserver.js"></script>
+      <script type="text/javascript" src="./public/scripts/spacesBgAndAnimate.js"></script>
       <script type="text/javascript">
-        var s = skrollr.init({
+          var s = skrollr.init({
             smoothScrolling: true,
             smoothScrollingDuration: 8000
-        });
+          });
+          if (s.isMobile()) {
+              s.destroy();
+            }
       </script>
-      <script type="text/javascript" src="./public/scripts/neonTextAnimation.js"></script>
-      <script type="text/javascript" src="./public/scripts/popcornImageTransform.js"></script>
        <script type="text/javascript">
-         let styles;
-         fetch('mapstyles.json')
-              .then(function (response) {
-                  return response.json();
-                  console.log(response)
-              })
-              .then(function (data) {
-                  styles = data;
-              })
-              .catch(function (err) {
-                  console.log('error: ' + err);
-                  styles = [];
-            });
-
         function initMap() {
             var coordinates = {lat: 25.077097631716903, lng: 55.13445435061175}
 
@@ -398,9 +384,11 @@
                 icon: './public/images/marker.png'
             });
 
+            let styles = [{"elementType":"geometry","stylers":[{"color":"#212121"}]},{"elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"elementType":"labels.text.fill","stylers":[{"color":"#757575"}]},{"elementType":"labels.text.stroke","stylers":[{"color":"#212121"}]},{"featureType":"administrative","elementType":"geometry","stylers":[{"color":"#757575"}]},{"featureType":"administrative.country","elementType":"labels.text.fill","stylers":[{"color":"#9e9e9e"}]},{"featureType":"administrative.land_parcel","stylers":[{"visibility":"off"}]},{"featureType":"administrative.locality","elementType":"labels.text.fill","stylers":[{"color":"#bdbdbd"}]},{"featureType":"poi","elementType":"labels.text.fill","stylers":[{"color":"#757575"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#181818"}]},{"featureType":"poi.park","elementType":"labels.text.fill","stylers":[{"color":"#616161"}]},{"featureType":"poi.park","elementType":"labels.text.stroke","stylers":[{"color":"#1b1b1b"}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"color":"#2c2c2c"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#8a8a8a"}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#373737"}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"color":"#3c3c3c"}]},{"featureType":"road.highway.controlled_access","elementType":"geometry","stylers":[{"color":"#4e4e4e"}]},{"featureType":"road.local","elementType":"labels.text.fill","stylers":[{"color":"#616161"}]},{"featureType":"transit","elementType":"labels.text.fill","stylers":[{"color":"#757575"}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#000000"}]},{"featureType":"water","elementType":"labels.text.fill","stylers":[{"color":"#3d3d3d"}]}]
+
           map.setOptions({styles: styles});
         }
       </script>
-      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGqJqbeNEbz-E95Y3fhSzeACToSWiZ9B8&callback=initMap"></script>  -->
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGqJqbeNEbz-E95Y3fhSzeACToSWiZ9B8&callback=initMap" async></script>  
   </body>
 </html>

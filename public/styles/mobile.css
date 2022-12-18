@@ -345,7 +345,7 @@
     width: 139px;
   }
   .wrap_ninthScreen {
-    top: 1200px;
+    top: 0;
   }
   #welcome_txt,
   #welcome_txt_bellow,
@@ -413,19 +413,20 @@
   }
   .wrap_map {
     margin-bottom: 0;
-    top: 1000px;
+    top: 0;
+    margin-bottom: 100px;
   }
 
   /* Mobile footer 340px */
   .wrap_footer {
-    top: 1200px;
+    top: 0;
   }
 
   .footer {
     grid-template-columns: 1fr 30px;
     padding-right: 20px;
     padding-left: 20px;
-    width: 274px;
+    width: 290px;
   }
   .wrap_about,
   .wrap_location,
@@ -533,55 +534,3 @@
   }
 }
 
-/* костыль-запрос на packages */
-
-/* @media screen and (max-width: 738px) {
-  .packages {
-    margin-left: 612px;
-  }
-
-  .packages-table {
-    width: 50%;
-  }
-}
-
-@media screen and (max-width: 634px) {
-  .packages {
-    margin-left: 670px;
-  }
-
-  .packages-table {
-    width: 45%;
-  }
-}
-
-@media screen and (max-width: 520px) {
-  .packages {
-    margin-left: 792px !important;
-  }
-
-  .packages-table {
-    width: 35% !important;
-  }
-}
-
-@media screen and (max-width: 444px) {
-  .packages {
-    margin-left: 827px !important;
-  }
-
-  .packages-table {
-    width: 32% !important;
-  }
-}
-
-@media screen and (max-width: 412px) {
-  .packages {
-    margin-left: 854px !important;
-  }
-
-  .packages-table {
-    width: 30% !important;
-  }
-}
- */
