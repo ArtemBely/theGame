@@ -42,21 +42,18 @@ Camera
 */
 const camera = new PerspectiveCamera(75, width / height, 0.1, 100);
 scene.add(camera);
-const viewMatrixCamera = camera.matrixWorldInverse
-const projectionMatrixCamera = camera.projectionMatrix
-const modelMatrixCamera = camera.matrixWorld
-const projPosition = camera.position
+
 
 // Load Texture
 const textureLoader = new TextureLoader();
 const texture = textureLoader.load("public/images/Group 60.jpeg");
+textureLoader.setCrossOrigin('anonymous');
 
 /**
 
 Object
 */
 const geometry = new SphereGeometry(1, 512, 512);
-geometry.computeTangents();
 const uniforms = {
 uTime: { value: 0.2 },
 uDistortionFrequency: { value: 1 },
@@ -73,11 +70,11 @@ uLightColor: { value: new Vector4(2.37, 2.25, 1.58, 1.0) },
 uLightAPosition: { value: new Vector3(1.0, 1.0, 0.0) },
 uLightBPosition: { value: new Vector3(-1.0, -5.0, 0.0) },
 uTexture: { type: 't', value: texture },
-viewMatrixCamera: { type: 'm4', value: viewMatrixCamera },
-projectionMatrixCamera: { type: 'm4', value: projectionMatrixCamera },
-modelMatrixCamera: { type: 'mat4', value: modelMatrixCamera },
+viewMatrixCamera: { type: 'm4', value: camera.matrixWorldInverse },
+projectionMatrixCamera: { type: 'm4', value: camera.projectionMatrix },
+modelMatrixCamera: { type: 'mat4', value: camera.matrixWorld },
 savedModelMatrix: { type: 'mat4', value: new Matrix4() },
-projPosition: { type: 'v3', value: projPosition },
+projPosition: { type: 'v3', value: camera.position },
 };
 
 const material = new ShaderMaterial({
@@ -88,8 +85,23 @@ fragmentShader: getFragmentShader(),
 
 const sphere = new Mesh(geometry, material);
 
+console.log(geometry)
 scene.add(sphere);
 camera.position.z = 2.5;
+geometry.computeTangents()
+/**
+ * Worker
+ */
+
+if(window.Worker) {
+  const worker = new Worker('./public/scripts/worker.js')
+  worker.postMessage({ type: 'tangents', object: geometry });
+
+  // Listen for a message from the worker
+  worker.onmessage = (event) => {
+    
+  };  
+}
 
 /**
 
@@ -119,6 +131,8 @@ Sphere zoom
 */
 function sphereZoom() {
   canvas.style.zIndex = 5;
+  if(gsap)
+ { 
   gsap.to(camera.position,
   {
     duration : 0.4,
@@ -131,6 +145,7 @@ function sphereZoom() {
     }
   }
   )
+}
 }
 /**
 
@@ -153,8 +168,8 @@ event.preventDefault();
 event.stopPropagation();
 sphereZoom();
 });
-/**
 
+/*
 Loop
 */
 let requestID;
@@ -162,11 +177,6 @@ let requestID;
 const loop = () => {
 requestID = window.requestAnimationFrame(loop);
 uniforms.uTime.value += 0.015;
-uniforms.savedModelMatrix.value = sphere.matrixWorld;
-uniforms.viewMatrixCamera.value = camera.matrixWorldInverse;
-uniforms.projectionMatrixCamera.value = camera.projectionMatrix;
-uniforms.modelMatrixCamera.value = camera.matrixWorld;
-uniforms.projPosition.value = camera.position;
 
 if(!document.body.classList.contains("preview")) {
   disableLoop(requestID);
