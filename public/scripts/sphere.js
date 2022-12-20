@@ -1,11 +1,32 @@
-THREE.BufferGeometry.prototype.computeTangents=function(){var r=this.index,t=this.attributes;if(null!==r&&void 0!==t.position&&void 0!==t.normal&&void 0!==t.uv){var o=r.array,e=t.position.array,a=t.normal.array,n=t.uv.array,E=e.length/3;void 0===t.tangent&&this.addAttribute("tangent",new THREE.BufferAttribute(new Float32Array(4*E),4));for(var y=t.tangent.array,c=[],i=[],d=0;d<E;d++)c[d]=new THREE.Vector3,i[d]=new THREE.Vector3;var f=new THREE.Vector3,s=new THREE.Vector3,u=new THREE.Vector3,T=new THREE.Vector2,w=new THREE.Vector2,H=new THREE.Vector2,R=new THREE.Vector3,v=new THREE.Vector3,V=this.groups;0===V.length&&(V=[{start:0,count:o.length}]);for(var l=0,m=V.length;l<m;++l)for(var g=S=(G=V[l]).start,x=S+G.count;g<x;g+=3)j(o[g+0],o[g+1],o[g+2]);var A,h,p,z=new THREE.Vector3,b=new THREE.Vector3,B=new THREE.Vector3,F=new THREE.Vector3;for(l=0,m=V.length;l<m;++l){var G,S;for(g=S=(G=V[l]).start,x=S+G.count;g<x;g+=3)k(o[g+0]),k(o[g+1]),k(o[g+2])}}function j(r,t,o){f.fromArray(e,3*r),s.fromArray(e,3*t),u.fromArray(e,3*o),T.fromArray(n,2*r),w.fromArray(n,2*t),H.fromArray(n,2*o);var a=s.x-f.x,E=u.x-f.x,y=s.y-f.y,d=u.y-f.y,V=s.z-f.z,l=u.z-f.z,m=w.x-T.x,g=H.x-T.x,x=w.y-T.y,A=H.y-T.y,h=1/(m*A-g*x);R.set((A*a-x*E)*h,(A*y-x*d)*h,(A*V-x*l)*h),v.set((m*E-g*a)*h,(m*d-g*y)*h,(m*l-g*V)*h),c[r].add(R),c[t].add(R),c[o].add(R),i[r].add(v),i[t].add(v),i[o].add(v)}function k(r){B.fromArray(a,3*r),F.copy(B),h=c[r],z.copy(h),z.sub(B.multiplyScalar(B.dot(h))).normalize(),b.crossVectors(F,h),p=b.dot(i[r]),A=p<0?-1:1,y[4*r]=z.x,y[4*r+1]=z.y,y[4*r+2]=z.z,y[4*r+3]=A}};
+import {  
+        Scene, 
+        PerspectiveCamera,
+        TextureLoader,
+        SphereGeometry,
+        Vector2,
+        Vector3,
+        Vector4,
+        Matrix4,
+        ShaderMaterial,
+        Mesh,
+        WebGLRenderer,
+        } from 'https://unpkg.com/three/build/three.module.js'
+
+const img = new Image();
+img.src = "./public/images/background.jpg";
+img.onload = () => { 
+const loader = document.querySelector('.load-wrap');
+loader.classList.add('loaded')
+}
+
+
 
 
 // Canvas
 const canvas = document.querySelector('canvas.webgl');
 
 // Scene
-const scene = new THREE.Scene();
+const scene = new Scene();
 
 /**
 
@@ -19,55 +40,53 @@ height: window.innerHeight,
 
 Camera
 */
-const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 100);
+const camera = new PerspectiveCamera(75, width / height, 0.1, 100);
 scene.add(camera);
-const viewMatrixCamera = camera.matrixWorldInverse.clone();
-const projectionMatrixCamera = camera.projectionMatrix.clone();
-const modelMatrixCamera = camera.matrixWorld.clone();
-const projPosition = camera.position.clone();
+const viewMatrixCamera = camera.matrixWorldInverse
+const projectionMatrixCamera = camera.projectionMatrix
+const modelMatrixCamera = camera.matrixWorld
+const projPosition = camera.position
 
 // Load Texture
-const textureLoader = new THREE.TextureLoader();
+const textureLoader = new TextureLoader();
 const texture = textureLoader.load("public/images/Group 60.jpeg");
 
 /**
 
 Object
 */
-const geometry = new THREE.SphereBufferGeometry(1, 512, 512);
+const geometry = new SphereGeometry(1, 512, 512);
 geometry.computeTangents();
 const uniforms = {
 uTime: { value: 0.2 },
-uDistortionFrequency: { value: 2 },
-uDistortionStrngth: { value: 1.2 },
-uDisplacementFrequency: { value: 2 },
-uDisplacementStrngth: { value: 0.23 },
+uDistortionFrequency: { value: 1 },
+uDistortionStrngth: { value: 1.5 },
+uDisplacementFrequency: { value: 3 },
+uDisplacementStrngth: { value: 0.18 },
 uSubdivision: {
-value: new THREE.Vector2(geometry.parameters.widthSegments, geometry.parameters.heightSegments),
+value: new Vector2(geometry.parameters.widthSegments, geometry.parameters.heightSegments),
 },
-uFresnelOffset: { value: -1.609 },
+uFresnelOffset: { value: -2 },
 uFresnelMultiplier: { value: 3.587 },
-uFresnelPower: { value: 1.793 },
-uLightColor: { value: new THREE.Vector4(2.37, 2.25, 1.58, 1.0) },
-uLightAPosition: { value: new THREE.Vector3(1.0, 1.0, 0.0) },
-uLightBPosition: { value: new THREE.Vector3(-1.0, -5.0, 0.0) },
+uFresnelPower: { value: 1.3 },
+uLightColor: { value: new Vector4(2.37, 2.25, 1.58, 1.0) },
+uLightAPosition: { value: new Vector3(1.0, 1.0, 0.0) },
+uLightBPosition: { value: new Vector3(-1.0, -5.0, 0.0) },
 uTexture: { type: 't', value: texture },
 viewMatrixCamera: { type: 'm4', value: viewMatrixCamera },
 projectionMatrixCamera: { type: 'm4', value: projectionMatrixCamera },
 modelMatrixCamera: { type: 'mat4', value: modelMatrixCamera },
-savedModelMatrix: { type: 'mat4', value: new THREE.Matrix4() },
+savedModelMatrix: { type: 'mat4', value: new Matrix4() },
 projPosition: { type: 'v3', value: projPosition },
 };
 
-const material = new THREE.RawShaderMaterial({
+const material = new ShaderMaterial({
 uniforms: uniforms,
 vertexShader: getVertexShader(),
 fragmentShader: getFragmentShader(),
 });
 
-const sphere = new THREE.Mesh(geometry, material);
-
-console.log(geometry)
+const sphere = new Mesh(geometry, material);
 
 scene.add(sphere);
 camera.position.z = 2.5;
@@ -76,7 +95,7 @@ camera.position.z = 2.5;
 
 Renderer
 */
-const renderer = new THREE.WebGLRenderer({
+const renderer = new WebGLRenderer({
 canvas: canvas,
 alpha: true,
 antialias: true,
@@ -115,50 +134,6 @@ function sphereZoom() {
 }
 /**
 
-Loop
-*/
-
-/**
-
-Mouse move
-*/
-let mouse = new THREE.Vector2();
-document.addEventListener('mousemove', (event) => {
-mouse.x = (event.clientX / width) * 2 - 1;
-mouse.y = -(event.clientY / height) * 2 + 1;
-});
-
-/**
-
-Touch move
-*/
-document.addEventListener('touchmove', (event) => {
-event.preventDefault();
-event.stopPropagation();
-mouse.x = (event.touches[0].clientX / width) * 2 - 1;
-mouse.y = -(event.touches[0].clientY / height) * 2 + 1;
-});
-
-/**
-
-Mouse leave
-*/
-document.addEventListener('mouseleave', (event) => {
-mouse.x = 0;
-mouse.y = 0;
-});
-/**
-
-Touch end
-*/
-document.addEventListener('touchend', (event) => {
-event.preventDefault();
-event.stopPropagation();
-mouse.x = 0;
-mouse.y = 0;
-});
-
-
 /**
 
 Click
@@ -178,70 +153,34 @@ event.preventDefault();
 event.stopPropagation();
 sphereZoom();
 });
-
-/**
-
-Resize
-*/
-window.addEventListener('resize', () => {
-width = window.innerWidth;
-height = window.innerHeight;
-camera.aspect = width / height;
-camera.updateProjectionMatrix();
-
-renderer.setSize(width, height);
-});
-
-/**
-
-// Load
-// */
-// window.addEventListener('load', () => {
-// const preloader = document.querySelector('.load-wrap');
-// preloader.classList.add('loaded');
-// });
-
-
 /**
 
 Loop
 */
-const loop = () => {
-window.requestAnimationFrame(loop);
-uniforms.uTime.value += 0.01;
-uniforms.savedModelMatrix.value.copy(sphere.matrixWorld);
-uniforms.viewMatrixCamera.value.copy(camera.matrixWorldInverse);
-uniforms.projectionMatrixCamera.value.copy(camera.projectionMatrix);
-uniforms.modelMatrixCamera.value.copy(camera.matrixWorld);
-uniforms.projPosition.value.copy(camera.position);
+let requestID;
 
-if(!document.body.classList.contains('preview')) return null;
+const loop = () => {
+requestID = window.requestAnimationFrame(loop);
+uniforms.uTime.value += 0.015;
+uniforms.savedModelMatrix.value = sphere.matrixWorld;
+uniforms.viewMatrixCamera.value = camera.matrixWorldInverse;
+uniforms.projectionMatrixCamera.value = camera.projectionMatrix;
+uniforms.modelMatrixCamera.value = camera.matrixWorld;
+uniforms.projPosition.value = camera.position;
+
+if(!document.body.classList.contains("preview")) {
+  disableLoop(requestID);
+}
 
 renderer.render(scene, camera);
 };
 
+function disableLoop(id) {
+  window.cancelAnimationFrame(id)
+}
+
 loop();
-/**
 
-Resize
-*/
-window.addEventListener('resize', () => {
-width = window.innerWidth;
-height = window.innerHeight;
-camera.aspect = width / height;
-camera.updateProjectionMatrix();
-
-renderer.setSize(width, height);
-});
-
-/**
-
-Load
-*/
-window.addEventListener('load', () => {
-const preloader = document.querySelector('.load-wrap');
-preloader.classList.add('loaded');
-});
 
 function getFragmentShader() {
 return `
@@ -274,9 +213,6 @@ function getVertexShader() {
 return `
 #define M_PI 3.1415926535897932384626433832795
 
-uniform mat4 projectionMatrix;
-uniform mat4 viewMatrix;
-uniform mat4 modelMatrix;
 uniform mat4 savedModelMatrix;
 
 uniform float uTime;
@@ -292,16 +228,12 @@ uniform vec3 uLightBPosition;
 uniform vec2 uSubdivision;
 
 uniform vec3 uOffset;
-uniform vec3 cameraPosition;
 
 uniform float uFresnelOffset;
 uniform float uFresnelMultiplier;
 uniform float uFresnelPower;
 
-attribute vec3 position;
-attribute vec3 normal;
 attribute vec4 tangent;
-attribute vec2 uv;
 
 varying vec3 vNormal;
 varying float vPerlinStrength;

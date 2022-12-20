@@ -1,36 +1,34 @@
 @font-face {
 	font-family: 'Inter-Regular';
-	src: url('../fonts/Inter-Regular.woff') format('woff'),
-	url('../fonts/Inter-Regular.ttf') format('truetype');
+	src: url('../fonts/Inter-Regular.woff2') format('woff2'),
+	url('../fonts/Inter-Regular.woff') format('woff');
 	font-weight: normal;
 	font-style: normal;
 }
 @font-face {
 	font-family: 'Inter-Bold';
-	src: url('../fonts/Inter-Bold.woff') format('woff'),
-	url('../fonts/Inter-Bold.ttf') format('truetype');
+	src: url('../fonts/Inter-Bold.woff2') format('woff2'),
+	url('../fonts/Inter-Bold.woff') format('woff');
 	font-weight: normal;
 	font-style: normal;
 }
 @font-face {
 	font-family: 'Inter-LightBETA';
-	src: url('../fonts/Inter-LightBETA.eot?#iefix') format('embedded-opentype'),
-	url('../fonts/Inter-LightBETA.woff') format('woff'),
-	url('../fonts/Inter-LightBETA.ttf') format('truetype');
+	src: url('../fonts/Inter-LightBETA.woff2') format('woff2'),
+	url('../fonts/Inter-LightBETA.woff') format('woff');
 	font-weight: normal;
 	font-style: normal;
 }
 @font-face {
 	font-family: 'Montserrat-Bold';
-	src: url('../fonts/Montserrat-Bold.eot?#iefix') format('embedded-opentype'),
-	url('../fonts/Montserrat-Bold.woff') format('woff'),
-	url('../fonts/Montserrat-Bold.ttf') format('truetype');
+	src: url('../fonts/Montserrat-Bold.woff2') format('woff2'),
+	url('../fonts/Montserrat-Bold.woff') format('woff');
 	font-weight: normal;
 	font-style: normal;
 }
 @font-face {
 	font-family: 'Montserrat-Regular';
-	src: url('../fonts/Montserrat-Regular.ttf') format('truetype');
+	src: url('../fonts/Montserrat-Regular.woff2') format('woff2');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -73,6 +71,7 @@ body {
 	border: 0;
 	font-family: 'Inter-Regular';
 	background: #000000;
+	touch-action: none;
 }
 
 body.preview {
@@ -287,6 +286,7 @@ button {
 }
 .fithScreen {
 	grid-template-columns: 1fr;
+	justify-items: center;
 }
 .wrap_designPhotos {
 	display: grid;
@@ -335,6 +335,8 @@ button {
 }
 .below_designImgs {
 	width: 594px;
+	height: 100%;
+	object-fit: cover;
 }
 .secondDsgn {
 	grid-column: 1 / 2;

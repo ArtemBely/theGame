@@ -61,3 +61,20 @@
 
   observer.observe(table)
 })();
+
+(function(){
+const fifthScreen = document.querySelector('.fithScreen');
+
+const screenExpand = (entries) => {
+  entries.forEach(entry => {
+    if(fifthScreen.offsetWidth < 400 & entry.isIntersecting) {
+      fifthScreen.classList.add('fifthScreen-expanded')
+      console.log('aaaa')
+    } 
+  })
+}
+
+const observer = new IntersectionObserver(screenExpand, {threshold: 0.5})
+
+observer.observe(fifthScreen)
+})()

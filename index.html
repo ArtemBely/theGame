@@ -92,14 +92,14 @@
           <div class="wrap_fithScreen">
               <div class="fithScreen">
                     <div class="wrap_designPhotos">
-                          <img loading="lazy" src="./public/images/Cyber_Club_Vis_0007.png" class="below_designImgs desctop_img_version">
-                          <img loading="lazy" src="./public/images/Cyber_Club_Vis_0008_mobile.png" class="below_designImgs mobile_img_version" id='first_mob'>
-                          <img loading="lazy" src="./public/images/Cyber_Club_Vis_0008.png" class="below_designImgs secondDsgn desctop_img_version">
-                          <img loading="lazy" src="./public/images/Cyber_Club_Vis_0007_mobile.png" class="below_designImgs mobile_img_version" id='second_mob'>
-                          <img loading="lazy" src="./public/images/Cyber_Club_Vis_0005 1.png" class="below_designImgs thirdDsgn">
+                          <img loading="lazy" src="./public/images/meeting_place1.png" class="below_designImgs desctop_img_version">
+                          <img loading="lazy" src="./public/images/meeting_place1.png" class="below_designImgs mobile_img_version" id='first_mob'>
+                          <img loading="lazy" src="./public/images/meeting_place2.png" class="below_designImgs secondDsgn desctop_img_version">
+                          <img loading="lazy" src="./public/images/meeting_place2.png" class="below_designImgs mobile_img_version" id='second_mob'>
+                          <img loading="lazy" src="./public/images/meeting_place3.png" class="below_designImgs thirdDsgn">
                     </div>
                     <p class="neon_txt"><span class="neon_fone"></span>Your meeting place</p>
-                    <img src="./public/images/Cyber_Club_Vis_0005 1.png" class="thirdDsgn_mobile">
+                    <img src="./public/images/meeting_place3.png" class="thirdDsgn_mobile">
               </div>
           </div>
           <div class="wrap_sixthScreen">
@@ -353,21 +353,10 @@
           </div>
       </div>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r105/three.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
-      <script type="text/javascript" src="./public/scripts/sphere.js"></script>  
-      <script type="text/javascript" src="./public/scripts/script.js"></script>
+      <script src="./public/scripts/horizontalTranslate.js"></script>
+      <script type="module" src="./public/scripts/sphere.js"></script>  
       <script type="text/javascript" src="./public/scripts/scrollAnimationObserver.js"></script>
-      <script type="text/javascript" src="./public/scripts/spacesBgAndAnimate.js"></script>
-      <script type="text/javascript">
-          var s = skrollr.init({
-            smoothScrolling: true,
-            smoothScrollingDuration: 8000
-          });
-          if (s.isMobile()) {
-              s.destroy();
-            }
-      </script>
+      <script type="module" src="./public/scripts/spacesBgAndAnimate.js"></script>  
        <script type="text/javascript">
         function initMap() {
             var coordinates = {lat: 25.077097631716903, lng: 55.13445435061175}
