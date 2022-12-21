@@ -3,6 +3,25 @@
     width: 200px;
   }
 
+  /* wrap hokah */
+
+  #ember1 {
+    z-index: 2;
+    top: -298px !important;
+    right: -85px !important;
+    height: 578px;
+  }
+
+  #ember2 {
+    z-index: 8;
+    top: 191px !important;
+    right: -522px !important;
+  }
+
+  .ember2-img {
+    width: 700px;
+  }
+
   /* spaces adaptive */
 
   .spaces-scroll {
@@ -173,7 +192,7 @@
   .wrap_hookah-mobile {
     height: 660px;
     width: 100%;
-    overflow: hidden;
+    overflow-x: clip;
     display: inline-block;
   }
   .hookah-mobile {
@@ -304,10 +323,10 @@
   .sixthScreen,
   .seventhScreen {
     width: 726px;
-}
-.firstScreen {
-  width: 2000px;
-}
+  }
+  .firstScreen {
+    width: 2000px;
+  }
 
   /* 4 */
 
