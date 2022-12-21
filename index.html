@@ -12,9 +12,8 @@
     <link rel="stylesheet" href="./public/styles/mobile.css">
     <link rel="stylesheet" href="./public/styles/spacesBg.css">
   </head>
-  <body id="skrollr-body">
-  <!-- <body class="preview" id="skrollr-body"> -->
-    <div class="load-wrap loaded">
+  <body class="preview">
+    <div class="load-wrap">
       <div class="load">
         <hr/><hr/><hr/><hr/>
       </div>
@@ -74,7 +73,7 @@
                    <p class="wrap_book">
                     <picture>
                       <source srcset='./public/images/BigLogo.webp' type="image/webp">
-                      <img class='wrap_book-img' src='./public/images/BigLogo.png'>
+                      <img class='wrap_book-img' src='./public/images/BigLogo.png' loading="lazy">
                     </picture>
                     </p>
                    <p class="txt1" id='relax_txt'>A nice place to relax or have a good time. Play games on the world's most powerful gaming computer or stream live from the Streaming Room.</p>
@@ -112,7 +111,7 @@
                     <p class="wrap_cinema">
                       <picture>
                         <source srcset="./public/images/cinema.webp" type="image/webp" />
-                        <img src='./public/images/cinema.png' id='cinema_desktop_fone'/>
+                        <img src='./public/images/cinema.png' id='cinema_desktop_fone' loading="lazy"/>
                       </picture>
                       <picture>
                         <source srcset="./public/images/image 2 mobile.webp" type="image/webp" />
@@ -167,7 +166,7 @@
                             <source srcset="./public/images/cola.webp" type="image/webp" />
                             <img src="./public/images/cola.png">
                         </picture>
-                           
+                        
                         </p>
                         <p class="wrap_popcorn_image" id="popcorn">
                           <picture>
@@ -182,41 +181,29 @@
           <div class="wrap_seventhScreen">
             <div class="seventhScreen">
               <p class="title1 secondGradient" id='more_hookah'>More relaxation with high-quality hookah</p>
-              <!-- <picture class="ember ember-out" id="ember1">
+              <picture class="ember" id="ember1">
                 <source srcset="./public/images/ember_1.webp" type="image/webp" />
                 <img src="./public/images/ember_1.png">
-              </picture> -->
+              </picture>
               <p class="wrap_hookah">
                 <picture>
                   <source srcset="./public/images/shutterstock_large.webp" type="image/webp">
                   <img class="hookah" src="./public/images/shutterstock_large.png">
                 </picture>
-                <picture class="ember" id="ember1">
+                <picture class="ember" id="ember2">
                   <source srcset="./public/images/ember_2.webp" type="image/webp" />
                   <img src="./public/images/ember_2.png">
-                </picture>
-                <picture class="ember" id="ember2">
-                  <source srcset="./public/images/ember_1.webp" type="image/webp" />
-                  <img src="./public/images/ember_1.png">
                 </picture>
               </p>
               <p class="wrap_hookah-mobile">
                 <picture>
                   <source srcset="./public/images/shutterstock.webp" type="image/webp" />
-                  <img class="hookah-mobile" src="./public/images/shutterstock.png" >
-                </picture>
-                <picture class="ember" id="ember1">
-                  <source srcset="./public/images/ember_2.webp" type="image/webp" />
-                  <img class="ember1-img" src="./public/images/ember_2.png">
+                  <img class="hookah-mobile" src="./public/images/shutterstock.png">
                 </picture>
                 <picture class="ember" id="ember2">
-                  <source srcset="./public/images/ember_1.webp" type="image/webp" />
-                  <img class="ember2-img" src="./public/images/ember_1.png">
-                </picture>
-                <!-- <picture id="ember2">
                   <source srcset="./public/images/ember_2.webp" type="image/webp" />
-                  <img src="./public/images/ember_2.png">
-                </picture>   -->
+                  <img class="ember2-img" src="./public/images/ember_2.png">
+                </picture>
               </p>
             </div>
           </div>
@@ -461,10 +448,8 @@
           </div>
       </div>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" async></script>
-      <script type="module" src="./public/scripts/sphere.js"></script>  
-      <script type="text/javascript" src="./public/scripts/forYouHorizontalTranslate.js"></script>
-      <script type="text/javascript" src="./public/scripts/scrollAnimationObserver.js"></script>
-      <script type="text/javascript" src="./public/scripts/spacesBgAndAnimate.js"></script>  
+      <script type="module" src="./public/scripts/sphere.js"></script> 
+      <script type="text/javascript" src="./public/scripts/script.js"></script> 
        <script type="text/javascript">
         function initMap() {
             var coordinates = {lat: 25.077097631716903, lng: 55.13445435061175}
@@ -486,6 +471,6 @@
           map.setOptions({styles: styles});
         }
       </script>
-      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGqJqbeNEbz-E95Y3fhSzeACToSWiZ9B8&callback=initMap" async></script>  
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGqJqbeNEbz-E95Y3fhSzeACToSWiZ9B8&callback=initMap" async defer></script>  
   </body>
 </html>

@@ -13,14 +13,6 @@ import {
         BufferAttribute
         } from 'https://unpkg.com/three/build/three.module.js'
 
-window.onload = () => { 
-const loader = document.querySelector('.load-wrap');
-loader.classList.add('loaded')
-}
-
-
-
-
 // Canvas
 const canvas = document.querySelector('canvas.webgl');
 
@@ -48,28 +40,15 @@ const textureLoader = new TextureLoader();
 const texture = textureLoader.load("public/images/Group 60.jpeg");
 textureLoader.setCrossOrigin('anonymous');
 
+if(typeof OffscreenCanvas !== "undefined") {
+
+}
+
 /**
 
 Object
 */
-const geometry = new SphereGeometry(1, 512, 512)
-
-/**
- * Worker
- */
-
-if(window.Worker) {
-  const worker = new Worker('./public/scripts/worker.js', {type: 'module'})
-  worker.postMessage({ type: 'tangents' });
-
-  // Listen for a message from the worker
-  worker.onmessage = (message) => {
-    geometry.setAttribute('tangent', new BufferAttribute(message.data, 4));
-  };  
-} else {
-  geometry.computeTangents();
-}
-
+const geometry = new SphereGeometry(1, 250, 250)
 
 const uniforms = {
 uTime: { value: 0.2 },
@@ -78,7 +57,7 @@ uDistortionStrngth: { value: 1.5 },
 uDisplacementFrequency: { value: 3 },
 uDisplacementStrngth: { value: 0.18 },
 uSubdivision: {
-value: new Vector2(512, 512),
+value: new Vector2(250, 250),
 },
 uFresnelOffset: { value: -2 },
 uFresnelMultiplier: { value: 3.587 },
@@ -93,6 +72,23 @@ modelMatrixCamera: { type: 'mat4', value: camera.matrixWorld },
 savedModelMatrix: { type: 'mat4', value: new Matrix4() },
 projPosition: { type: 'v3', value: camera.position },
 };
+
+/**
+ * Worker
+ */
+
+if(window.Worker) {
+  const worker = new Worker('./public/scripts/worker.js', {type: 'module'})
+  worker.postMessage({ type: 'tangents' });
+
+  worker.onmessage = (message) => {
+    if(message.data.type === 'tangents') {
+      geometry.setAttribute('tangent', new BufferAttribute(message.data.object, 4));
+    }
+  };  
+} else {
+  geometry.computeTangents();
+}
 
 const material = new ShaderMaterial({
 uniforms: uniforms,
@@ -134,6 +130,7 @@ Sphere zoom
 */
 function sphereZoom() {
   canvas.style.zIndex = 5;
+  uniforms.uTime.value = 0.5;
   if(gsap)
  { 
   gsap.to(camera.position,
@@ -150,12 +147,8 @@ function sphereZoom() {
   )
 }
 }
-/**
 
-/**
 
-Click
-*/
 document.addEventListener('wheel', (event) => {
 event.stopPropagation();
 sphereZoom();

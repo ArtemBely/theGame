@@ -98,7 +98,6 @@ body {
   border: 0;
   font-family: "Inter-Regular";
   background: #000000;
-  touch-action: none;
 }
 
 body.preview {
@@ -140,6 +139,8 @@ button {
   display: flex;
   justify-content: center;
   margin: 40px;
+  position: relative;
+  z-index: 3;
 }
 #mobile_fone,
 #cinema_mobile_fone {
@@ -404,9 +405,11 @@ button {
   grid-template-columns: 1fr;
   grid-gap: 50px;
 }
+
 .wrap_seventhScreen {
-  position: relative;
+	position: relative;
 }
+
 .seventhScreen {
   width: 1220px;
   display: grid;
@@ -427,7 +430,7 @@ button {
   left: -282px;
   width: 802px;
   height: 807px;
-  overflow-y: clip;
+  overflow: clip;
 }
 .hookah {
   height: 807px;
@@ -439,9 +442,6 @@ button {
 .ember {
   position: absolute;
   bottom: 0;
-  right: -463px;
-  width: 1238px;
-  overflow: hidden;
 }
 
 .ember img {
@@ -450,18 +450,18 @@ button {
 
 #ember1 {
   z-index: 2;
-  top: -1314px !important;
-  right: -461px !important;
+	bottom: 165px;
 }
 
 #ember2 {
   z-index: 2;
-  top: -947px !important;
-  right: 231px !important;
+	right: -100px;
+	height: 100%;
 }
 .wrap_hookah-mobile {
   position: relative;
   display: none;
+	overflow-y: clip;
 }
 .wrap_seventhScreen {
   position: relative;
@@ -768,7 +768,7 @@ button {
   position: relative;
   left: 86px;
 }
-.msg_btn picture img {
+.msg_btn img {
 	   width: 24px;
 		     margin-right: 10px;
 }
@@ -845,7 +845,7 @@ button {
   grid-column: 2 / 3;
   grid-row: 1 / 2;
 }
-.wrpa_insta picture img {
+.wrpa_insta img {
 	width: 32px;
 }
 .social_footer {

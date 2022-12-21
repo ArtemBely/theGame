@@ -82,11 +82,13 @@
     width: 100vw;
   }
 
+  .wrap_book picture {
+    position: relative;
+    top: -580px;
+  }
 
-  .wrap_book > img {
+  .wrap_book picture img {
       width: 3800px;
-      position: relative;
-      top: -451px;
   }
   .wrap_allScreens {
     height: auto;
@@ -181,13 +183,15 @@
   height: 810px;
 }
 #cola {
-  left: 0;
+  left: -600px;
 }
-#cola > img{
+#cola picture img{
   height: 662px;
+  top: 0;
 }
-#popcorn > img{
+#popcorn picture img{
   height: 1160px;
+  top: 0;
 }
 #year {
     grid-column: 5 / 6;
@@ -241,7 +245,7 @@
   font-size: 110px;
   -webkit-text-stroke-width: 2px;
 }
-.wrap_hookah > img {
+.wrap_hookah picture img {
   height: 150%;
   top: -300px;
 }
@@ -287,7 +291,7 @@
 #for_lover {
       width: 1000px;
 }
-.wrap_cinema > img {
+.wrap_cinema picture img {
     width: 3300px;
 }
 .each_imgs1 {
@@ -300,7 +304,7 @@
     position: relative;
     top: -230px;
 }
-.wrap_auto > img {
+.wrap_auto picture img {
     width: 1295px;
 }
 #welcome_txt, #welcome_txt_bellow {
@@ -309,7 +313,7 @@
 #footer_logo {
     width: 400px;
 }
-.wrpa_insta > img, .social_footer {
+.wrpa_insta picture img, .social_footer {
     width: 50px;
 }
 .social_footer {
@@ -365,11 +369,11 @@
     position: relative;
     top: 557px;
 }
-.msg_btn > img {
+.msg_btn img {
     width: 55px;
     margin-right: 25px;
 }
-.wrap_popcorn > img {
+.wrap_popcorn picture img {
     position: relative;
     top: -299px;
     width: 2350px;

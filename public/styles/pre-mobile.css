@@ -7,15 +7,13 @@
 
   #ember1 {
     z-index: 2;
-    top: -298px !important;
-    right: -85px !important;
     height: 578px;
+    left: 0;
+    bottom: 30px;
   }
 
   #ember2 {
     z-index: 8;
-    top: 191px !important;
-    right: -522px !important;
   }
 
   .ember2-img {
