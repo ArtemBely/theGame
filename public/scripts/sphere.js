@@ -157,7 +157,6 @@ function sphereZoom() {
 Click
 */
 document.addEventListener('wheel', (event) => {
-event.preventDefault();
 event.stopPropagation();
 sphereZoom();
 });
@@ -167,7 +166,6 @@ sphereZoom();
 Touch start
 */
 document.addEventListener('touchstart', (event) => {
-event.preventDefault();
 event.stopPropagation();
 sphereZoom();
 });

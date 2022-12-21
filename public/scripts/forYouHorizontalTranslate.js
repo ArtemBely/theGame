@@ -2,13 +2,14 @@
   window.onscroll = function() {
     const element = document.querySelector('.wrap_imgs1');
     const elementRect = element.getBoundingClientRect();
-    const elementPosition = elementRect.left;
   
-    const scrollPosition = elementRect.top;
-    let movement = scrollPosition / 10; // Adjust the division factor to control the speed of the animation
+    let distance = Math.floor(window.innerHeight - elementRect.top)
+    
+    if(distance < 0) {
+      distance = 0;
+    }
+    element.style.transform = `translateX(-${distance / 30}%)`;
   
-    element.style.left = `${movement}px`;
-  
-    requestAnimationFrame(window.onscroll);
+    // requestAnimationFrame(window.onscroll);
   }
 })()
