@@ -102,8 +102,6 @@
     width: 534px;
   }
 
-
-
   /* 6 */
   .firstGradient {
     width: 534px;
@@ -143,6 +141,29 @@
 }
 
 @media screen and (max-width: 576px) {
+  /* wrap hokah */
+
+  #ember1 {
+    z-index: 1;
+    top: -245px !important;
+    right: -931px !important;
+    height: 240px;
+  }
+
+  .ember1-img {
+    width: 361px;
+  }
+
+  #ember2 {
+    z-index: 8;
+    top: 3px !important;
+    right: -717px !important;
+  }
+
+  .ember2-img {
+    width: 536px;
+  }
+
   .firstScreen {
     width: 576px;
   }
@@ -170,7 +191,7 @@
     margin: 0;
     height: 870px;
     position: relative;
-    top: -200px; 
+    top: -200px;
   }
   .mobile_book > a {
     text-decoration: none;
@@ -499,7 +520,7 @@
   /* packages adaptive */
   .packages {
     width: 385px;
-  } 
+  }
 
   .table-item {
     padding: 20px;
@@ -528,7 +549,7 @@
   .packages {
     width: 100%;
     max-width: 280px;
-  } 
+  }
   .packages-table {
     padding: 10px;
   }
@@ -547,4 +568,3 @@
     font-size: 25px;
   }
 }
-
