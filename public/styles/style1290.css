@@ -19,7 +19,7 @@
   .each_imgs1 {
     width: 490px;
   }
-  .wrap_book > img {
+  .wrap_book picture img {
     width: 1700px;
     position: relative;
     top: -320px;
@@ -65,7 +65,7 @@
     line-height: 150%;
     position: relative;
   }
-  .wrap_auto > img {
+  .wrap_auto picture img {
     width: 422px;
   }
   .wrap_seventhScreen {
@@ -82,7 +82,7 @@
   .wrap_popcorn {
     margin: 0;
   }
-  .wrap_cinema > img {
+  .wrap_cinema picture img {
     width: 1733px;
     left: 118px;
     position: relative;

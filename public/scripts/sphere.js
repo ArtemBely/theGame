@@ -10,11 +10,10 @@ import {
         ShaderMaterial,
         Mesh,
         WebGLRenderer,
+        BufferAttribute
         } from 'https://unpkg.com/three/build/three.module.js'
 
-const img = new Image();
-img.src = "./public/images/background.jpg";
-img.onload = () => { 
+window.onload = () => { 
 const loader = document.querySelector('.load-wrap');
 loader.classList.add('loaded')
 }
@@ -53,7 +52,25 @@ textureLoader.setCrossOrigin('anonymous');
 
 Object
 */
-const geometry = new SphereGeometry(1, 512, 512);
+const geometry = new SphereGeometry(1, 512, 512)
+
+/**
+ * Worker
+ */
+
+if(window.Worker) {
+  const worker = new Worker('./public/scripts/worker.js', {type: 'module'})
+  worker.postMessage({ type: 'tangents' });
+
+  // Listen for a message from the worker
+  worker.onmessage = (message) => {
+    geometry.setAttribute('tangent', new BufferAttribute(message.data, 4));
+  };  
+} else {
+  geometry.computeTangents();
+}
+
+
 const uniforms = {
 uTime: { value: 0.2 },
 uDistortionFrequency: { value: 1 },
@@ -61,7 +78,7 @@ uDistortionStrngth: { value: 1.5 },
 uDisplacementFrequency: { value: 3 },
 uDisplacementStrngth: { value: 0.18 },
 uSubdivision: {
-value: new Vector2(geometry.parameters.widthSegments, geometry.parameters.heightSegments),
+value: new Vector2(512, 512),
 },
 uFresnelOffset: { value: -2 },
 uFresnelMultiplier: { value: 3.587 },
@@ -85,23 +102,9 @@ fragmentShader: getFragmentShader(),
 
 const sphere = new Mesh(geometry, material);
 
-console.log(geometry)
 scene.add(sphere);
 camera.position.z = 2.5;
-geometry.computeTangents()
-/**
- * Worker
- */
 
-if(window.Worker) {
-  const worker = new Worker('./public/scripts/worker.js')
-  worker.postMessage({ type: 'tangents', object: geometry });
-
-  // Listen for a message from the worker
-  worker.onmessage = (event) => {
-    
-  };  
-}
 
 /**
 

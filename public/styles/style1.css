@@ -209,7 +209,7 @@ button {
     cursor: pointer;
     margin-top: 45px;
 }
-.wrap_book > img {
+.wrap_book picture img {
   width: 1415px;
   position: relative;
   top: -163px;
@@ -222,6 +222,7 @@ button {
 }
 .each_imgs1 {
   width: 594px;
+	object-fit: cover;
 }
 .thirdScreen {
   width: 1200px; 
@@ -247,7 +248,7 @@ button {
 	left: -358px;
 	top: -121px;
 }
-.wrap_cinema > img {
+.wrap_cinema picture img {
 	    width: 1920px;
 }
 .wrap_popcorn {
@@ -261,7 +262,7 @@ button {
 	position: absolute;
 	width: 50%;
 }
-.wrap_popcorn_image > img {
+.wrap_popcorn_image picture img {
 	object-fit: contain;
 	width: 100%;
 }
@@ -357,6 +358,9 @@ button {
 	grid-template-columns: 1fr;
 	grid-gap: 50px;
 }
+.wrap_seventhScreen {
+	position: relative;
+}
 .seventhScreen {
 	width: 1220px;
 	display: grid;
@@ -379,26 +383,23 @@ button {
 	height: 807px;
 	overflow: hidden;
 }
-.wrap_hookah > img {
+.hookah {
 		height: 807px;
 		object-fit: cover;
 		position: relative;
 		right: 200px;
 		z-index: 1;
 }
-.wrap_ember {
+.ember {
 	position: absolute;
-	top: -170px;
-	display: flex;
-	align-items: flex-end;
-	height: 100%;
-	width: 1750px;
+	bottom: 0;
+	top: 0;
 }
-.wrap_ember > img {
-	width: 50%;
-	position: relative;
+
+.ember img {
+	object-fit: contain;
 }
-#ember1 {
+#ember2 {
 	z-index: 2;
 }
 .wrap_hookah-mobile {
@@ -410,9 +411,8 @@ button {
 	margin-top: 430px;
 }
 
-.small-title {
-	font-family: 'Montserrat-Bold', sans-serif;
-	font-size: 60px;
+.new-title {
+	margin-block-end: 0.5em;
 }
 
 .spaces-scroll {
@@ -476,11 +476,6 @@ button {
 	color: #808080;
 }
 
-#spaces-title {
-	position: relative;
-	left: 350px;
-}
-
 .item-title {
 	font-family: 'Montserrat-Bold', sans-serif;
 	font-size: 40px;
@@ -511,13 +506,6 @@ button {
 
 .cp-characters > p:nth-child(2n+1) {
 	color: #BBBEFF;
-}
-
-.spaces-bg {
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 0;
 }
 
 .wrap_packages {
@@ -716,7 +704,7 @@ button {
 	position: relative;
 	left: 86px;
 }
-.msg_btn > img {
+.msg_btn picture img {
 	   width: 24px;
 		     margin-right: 10px;
 }
@@ -737,7 +725,7 @@ button {
 .first_wrap_auto {
 	    left: 161px;
 }
-.wrap_auto > img {
+.wrap_auto picture img {
 	width: 633px;
 }
 #welcome_txt, #welcome_txt_bellow {
@@ -792,7 +780,7 @@ button {
 	grid-column: 2 / 3;
 	grid-row: 1 / 2;
 }
-.wrpa_insta > img {
+.wrpa_insta picture img {
 	width: 32px;
 }
 .social_footer {
