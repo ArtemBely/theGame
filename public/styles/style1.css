@@ -1,34 +1,34 @@
 @font-face {
-  font-family: "Inter-Regular";
-  src: url("../fonts/Inter-Regular.woff2") format("woff2"),
-    url("../fonts/Inter-Regular.woff") format("woff");
+  font-family: 'Inter-Regular';
+  src: url('../fonts/Inter-Regular.woff2') format('woff2'),
+    url('../fonts/Inter-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: "Inter-Bold";
-  src: url("../fonts/Inter-Bold.woff2") format("woff2"),
-    url("../fonts/Inter-Bold.woff") format("woff");
+  font-family: 'Inter-Bold';
+  src: url('../fonts/Inter-Bold.woff2') format('woff2'),
+    url('../fonts/Inter-Bold.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: "Inter-LightBETA";
-  src: url("../fonts/Inter-LightBETA.woff2") format("woff2"),
-    url("../fonts/Inter-LightBETA.woff") format("woff");
+  font-family: 'Inter-LightBETA';
+  src: url('../fonts/Inter-LightBETA.woff2') format('woff2'),
+    url('../fonts/Inter-LightBETA.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: "Montserrat-Bold";
-  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"),
-    url("../fonts/Montserrat-Bold.woff") format("woff");
+  font-family: 'Montserrat-Bold';
+  src: url('../fonts/Montserrat-Bold.woff2') format('woff2'),
+    url('../fonts/Montserrat-Bold.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: "Montserrat-Regular";
-  src: url("../fonts/Montserrat-Regular.woff2") format("woff2");
+  font-family: 'Montserrat-Regular';
+  src: url('../fonts/Montserrat-Regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
@@ -96,7 +96,7 @@ body {
   padding: 0;
   margin: 0;
   border: 0;
-  font-family: "Inter-Regular";
+  font-family: 'Inter-Regular';
   background: #000000;
 }
 
@@ -124,7 +124,7 @@ button {
   justify-content: center;
 }
 .firstScreen {
-  background: url("../images/Group 60.jpeg");
+  background: url('../images/Group 60.jpeg');
   background-repeat: no-repeat;
   width: 100vw;
   height: 140vh;
@@ -158,7 +158,7 @@ button {
 .title2 {
   font-size: 120px;
   line-height: 110%;
-  font-family: "Montserrat-Bold";
+  font-family: 'Montserrat-Bold';
   margin: 0;
 }
 #relax_txt-mobile {
@@ -272,7 +272,7 @@ button {
 }
 
 .wrap_imgs1 picture {
-	border-radius: 20px;
+  border-radius: 20px;
 }
 
 #friends_txt {
@@ -351,7 +351,7 @@ button {
   font-size: 60px;
   line-height: 110%;
   text-align: center;
-  font-family: "Montserrat-Bold";
+  font-family: 'Montserrat-Bold';
   -webkit-text-stroke: #dede7f;
   -webkit-text-fill-color: black;
   -webkit-text-stroke-color: #dede7f;
@@ -375,11 +375,7 @@ button {
   transition: all 0.5s ease-in;
 }
 .neon_text_active > .neon_fone {
-  background: radial-gradient(
-    ellipse,
-    rgb(222, 222, 127, 0.5) 0%,
-    transparent 60%
-  );
+  background: radial-gradient(ellipse, rgb(222, 222, 127, 0.5) 0%, transparent 60%);
 }
 .below_designImgs {
   width: 594px;
@@ -407,7 +403,7 @@ button {
 }
 
 .wrap_seventhScreen {
-	position: relative;
+  position: relative;
 }
 
 .seventhScreen {
@@ -450,18 +446,18 @@ button {
 
 #ember1 {
   z-index: 2;
-	bottom: 165px;
+  bottom: 165px;
 }
 
 #ember2 {
   z-index: 2;
-	right: -100px;
-	height: 100%;
+  right: -100px;
+  height: 100%;
 }
 .wrap_hookah-mobile {
   position: relative;
   display: none;
-	overflow-y: clip;
+  overflow-y: clip;
 }
 .wrap_seventhScreen {
   position: relative;
@@ -521,20 +517,20 @@ button {
 }
 
 .prefix {
-  font-family: "Montserrat-Bold", sans-serif;
+  font-family: 'Montserrat-Bold', sans-serif;
   color: rgb(187, 190, 255);
 }
 
 .soon {
   font-size: 40px;
-  font-family: "Montserrat-Regular", sans-serif;
+  font-family: 'Montserrat-Regular', sans-serif;
   margin-block-end: 0;
   margin-block-start: 10px;
   color: #808080;
 }
 
 .item-title {
-  font-family: "Montserrat-Bold", sans-serif;
+  font-family: 'Montserrat-Bold', sans-serif;
   font-size: 40px;
   line-height: 140%;
   margin-block-start: 0;
@@ -542,7 +538,7 @@ button {
 }
 
 .item-text {
-  font-family: "Inter-Regular", sans-serif;
+  font-family: 'Inter-Regular', sans-serif;
   font-size: 25px;
   line-height: 160%;
   margin-block-start: 0.25em;
@@ -641,13 +637,13 @@ button {
 }
 
 .table-item_title {
-  font-family: "Montserrat-Bold";
+  font-family: 'Montserrat-Bold';
   font-size: 40px;
   line-height: 49px;
 }
 
 .table-item_title > span {
-  font-family: "Inter-Regular";
+  font-family: 'Inter-Regular';
 }
 
 .table-item_row {
@@ -663,11 +659,11 @@ button {
 #table-grey-text {
   flex: 3;
   color: #808080;
-  font-family: "Inter-Bold";
+  font-family: 'Inter-Bold';
 }
 
 #table-grey-text > span {
-  font-family: "Inter-Regular";
+  font-family: 'Inter-Regular';
 }
 
 #coming-soon-item {
@@ -715,8 +711,7 @@ button {
   color: white;
   border: double 2px transparent;
   border-radius: 8px;
-  background-image: linear-gradient(black, black),
-    linear-gradient(to right, #0066ff, #7000ff);
+  background-image: linear-gradient(black, black), linear-gradient(to right, #0066ff, #7000ff);
   background-origin: border-box;
   background-clip: content-box, border-box;
   cursor: pointer;
@@ -769,8 +764,8 @@ button {
   left: 86px;
 }
 .msg_btn img {
-	   width: 24px;
-		     margin-right: 10px;
+  width: 24px;
+  margin-right: 10px;
 }
 .wrap_ninthScreen {
   display: flex;
@@ -790,7 +785,7 @@ button {
   left: 161px;
 }
 .wrap_auto picture img {
-	width: 633px;
+  width: 633px;
 }
 #welcome_txt,
 #welcome_txt_bellow {
@@ -846,7 +841,7 @@ button {
   grid-row: 1 / 2;
 }
 .wrpa_insta img {
-	width: 32px;
+  width: 32px;
 }
 .social_footer {
   width: 24px;
@@ -874,11 +869,11 @@ button {
   line-height: 150%;
   color: #faeed4;
   margin: 16px 0px;
-  font-family: "Inter-Bold";
+  font-family: 'Inter-Bold';
   left: -15px;
 }
 .wrap_book2 > a {
-  font-family: "Inter-Regular";
+  font-family: 'Inter-Regular';
   padding-left: 20px;
 }
 .made_in {
