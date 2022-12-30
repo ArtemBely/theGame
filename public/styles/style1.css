@@ -32,6 +32,28 @@
   font-weight: normal;
   font-style: normal;
 }
+progress {
+  background: #000;
+  border: 0;
+  width: 100%;
+  height: 0.8em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  --_track-size: min(10px, 1ex);
+  -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+progress::-webkit-progress-bar {
+  background: #000;
+}
+progress::-webkit-progress-value {
+  background: #574137;
+}
+progress::-moz-progress-bar {
+  background: #574137;
+}
 
 .load-wrap {
   background: #000;
@@ -124,7 +146,7 @@ button {
   justify-content: center;
 }
 .firstScreen {
-  background: url('../images/Group 60.jpeg');
+  background: url('../images/Group 60.jpg');
   background-repeat: no-repeat;
   width: 100vw;
   height: 140vh;
@@ -683,6 +705,7 @@ button {
   width: 100%;
   z-index: 3;
   display: flex;
+  align-items: center;
   justify-content: center;
   margin-bottom: 500px;
 }
@@ -691,7 +714,25 @@ button {
   width: 1920px;
   background-color: black;
 }
-
+#address {
+  position: absolute;
+  top: 100px;left: 20%;
+  z-index: 1000;
+  color: white;
+}
+#address h1 {
+  font-size: 40px;
+  margin-block-end: 0;
+  margin-block-start: 0;
+  font-family: 'Montserrat-Bold';
+  letter-spacing: 0.3em;
+}
+#address p {
+  margin-block-end: 0;
+  margin-block-start: 0;
+  font-size: 40px;
+  font-family: 'Montserrat-Regular';
+}
 .wrap_book_seat_btn {
   grid-column: 1 / 3;
   display: flex;

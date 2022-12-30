@@ -17,12 +17,13 @@
       <div class="load">
         <hr/><hr/><hr/><hr/>
       </div>
+      <progress value="5" max="100" indeterminate role="progressbar"></progress>
     </div>
     <div class="preview_wrap">
       <div class="overlay_wrap">
         <div class="overlay">
           <div class="overlay-link_wrap">
-            <a class="overlay-link" href="#">About</a>
+            <a class="overlay-link" id="scroll-to-about">About</a>
           </div>
           <div class="overlay-logo">
             <img src="./public/images/Logo_copy.svg" alt="">
@@ -58,14 +59,14 @@
             <p class="wrap_logo"><img src="./public/images/Logo.svg" /></p>
             <picture>
               <source srcset="./public/images/Group 60.webp" type="image/webp" />
-              <img src="./public/images/Group 60.jpeg" id='mobile_fone' />
+              <img src="./public/images/Group 60.jpg" id='mobile_fone' />
             </picture>
     
           </div>
         </div>
           <div class="wrap_secondScreen">
              <div class="secondScreen">
-                   <div class="wrap_seats">
+                   <div class="wrap_seats" id="about">
                        <p class="title1" id='title1_spec'>Place for you</p>
                        <p class="txt1" id='relax_txt-mobile'>A nice place to relax or have a good time. Play games on the world's most powerful gaming computer or stream live from the Streaming Room.</p>
                        <button type="button" class="book_btn">Book Your Seat</button>
@@ -84,19 +85,19 @@
                   <div class="wrap_imgs1">
                     <picture>
                       <source srcset="./public/images/for_you_img1.webp" type="image/webp" />
-                      <img src="./public/images/for_you_img1.png" class="each_imgs1"/>
+                      <img src="./public/images/for_you_img1.png" class="each_imgs1" loading="lazy"/>
                     </picture>
                     <picture>
                       <source srcset="./public/images/for_you_img2.webp" type="image/webp" />
-                      <img src="./public/images/for_you_img2.png" class="each_imgs1"/>
+                      <img src="./public/images/for_you_img2.png" class="each_imgs1" loading="lazy"/>
                     </picture>
                     <picture>
                       <source srcset="./public/images/for_you_img3.webp" type="image/webp" />
-                      <img src="./public/images/for_you_img3.png" class="each_imgs1"/>
+                      <img src="./public/images/for_you_img3.png" class="each_imgs1" loading="lazy"/>
                     </picture>
                     <picture>
                       <source srcset="./public/images/for_you_img4.webp" type="image/webp" />
-                      <img src="./public/images/for_you_img4.png" class="each_imgs1"/>
+                      <img src="./public/images/for_you_img4.png" class="each_imgs1" loading="lazy"/>
                     </picture>        
                   </div>
                   <p class="title1 firstGradient">.. for Your </p> <p class="title1 firstGradient" id='friends1'>Friends or Partners</p>
@@ -152,7 +153,7 @@
                     <p class="neon_txt"><span class="neon_fone"></span>Your meeting place</p>
                     <picture>
                       <source srcset="./public/images/meeting_place3.webp" type="image/webp" />
-                      <img class="thirdDsgn_mobile" src="./public/images/meeting_place3.png">
+                      <img loading="lazy" class="thirdDsgn_mobile" src="./public/images/meeting_place3.png">
                   </picture>
                 
               </div>
@@ -164,14 +165,14 @@
                         <p class="wrap_popcorn_image" id="cola">
                           <picture>
                             <source srcset="./public/images/cola.webp" type="image/webp" />
-                            <img src="./public/images/cola.png">
+                            <img loading="lazy" src="./public/images/cola.png">
                         </picture>
                         
                         </p>
                         <p class="wrap_popcorn_image" id="popcorn">
                           <picture>
                             <source srcset="./public/images/popcorn.webp" type="image/webp" />
-                            <img src="./public/images/popcorn.png">
+                            <img loading="lazy" src="./public/images/popcorn.png">
                         </picture>
                           
                         </p>
@@ -183,7 +184,7 @@
               <p class="title1 secondGradient" id='more_hookah'>More relaxation with high-quality hookah</p>
               <picture class="ember" id="ember1">
                 <source srcset="./public/images/ember_1.webp" type="image/webp" />
-                <img src="./public/images/ember_1.png">
+                <img loading="lazy" src="./public/images/ember_1.png">
               </picture>
               <p class="wrap_hookah">
                 <picture>
@@ -192,17 +193,17 @@
                 </picture>
                 <picture class="ember" id="ember2">
                   <source srcset="./public/images/ember_2.webp" type="image/webp" />
-                  <img src="./public/images/ember_2.png">
+                  <img loading="lazy" src="./public/images/ember_2.png">
                 </picture>
               </p>
               <p class="wrap_hookah-mobile">
                 <picture>
                   <source srcset="./public/images/shutterstock.webp" type="image/webp" />
-                  <img class="hookah-mobile" src="./public/images/shutterstock.png">
+                  <img loading="lazy" class="hookah-mobile" src="./public/images/shutterstock.png">
                 </picture>
                 <picture class="ember" id="ember2">
                   <source srcset="./public/images/ember_2.webp" type="image/webp" />
-                  <img class="ember2-img" src="./public/images/ember_2.png">
+                  <img loading="lazy" class="ember2-img" src="./public/images/ember_2.png">
                 </picture>
               </p>
             </div>
@@ -398,6 +399,10 @@
           </div>
 
           <div class="wrap_map">
+            <div id='address'>
+              <h1>DUBAI</h1>
+              <p>JBR, Bahar 2</p>
+            </div>
             <div id="map"></div>
           </div>
           <div class="wrap_ninthScreen">
@@ -447,19 +452,19 @@
               </div>
           </div>
       </div>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" async></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" async defer></script>
       <script type="module" src="./public/scripts/vertexShader.js"></script>
       <script type="module" src="./public/scripts/fragmentShader.js"></script>
       <script type="module" src="./public/scripts/sphere.js"></script> 
       <script type="text/javascript" src="./public/scripts/script.js"></script> 
-       <script type="text/javascript">
+       <script type="text/javascript" async defer>
         function initMap() {
             var coordinates = {lat: 25.077097631716903, lng: 55.13445435061175}
 
-            var map = new google.maps.Map(document.getElementById('map'), {
+            const map = new google.maps.Map(document.getElementById('map'), {
             center: {lat: 25.0657, lng: 55.1713},
             zoom: 12,
-            disableDefaultUI: true
+            disableDefaultUI: true,
             })
 
             var marker = new google.maps.Marker({
@@ -473,6 +478,6 @@
           map.setOptions({styles: styles});
         }
       </script>
-      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGqJqbeNEbz-E95Y3fhSzeACToSWiZ9B8&callback=initMap"></script>  
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGqJqbeNEbz-E95Y3fhSzeACToSWiZ9B8&callback=initMap" async defer></script>  
   </body>
 </html>
