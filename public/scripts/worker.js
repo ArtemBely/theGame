@@ -1,4 +1,4 @@
-import {  SphereGeometry } from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/0.148.0/three.module.min.js';
+import { SphereGeometry } from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/0.148.0/three.module.min.js';
 
 self.onmessage = (event) => {
   if (event.data.type === 'tangents') {

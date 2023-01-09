@@ -1,4 +1,12 @@
 @media screen and (max-width: 767px) {
+    #ember1 {
+        left: 20px;
+        bottom: 13px;
+    }
+    #ember1 img {
+        width: 578px;
+    }
+
   .fifthScreen-expanded {
       transition: all 0.5s;
   }
@@ -98,8 +106,8 @@
       right: -20px;
   }
   #address {
-    top: 50px;
-    left: 30%;
+      top: 50px;
+      left: 30%;
   }
   #map {
       width: 768px;
@@ -109,10 +117,10 @@
   }
 }
 @media screen and (max-width: 576px) {
-  #ember1 {
-      z-index: 1;
-      width: 100%;
-  }
+    #ember1 img {
+        width: 578px;
+    }
+
   .ember1-img {
       width: 361px;
   }
@@ -181,6 +189,7 @@
   }
   #relax_txt-mobile {
       width: 276px;
+      -webkit-margin-before: 10px;
       margin-block-start: 10px;
   }
   .title1,
@@ -328,25 +337,27 @@
       top: -151px;
   }
   .wrap_auto picture img {
-      width: 139px;
-  }
-  .wrap_ninthScreen {
-      top: 0;
-  }
-  #welcome_txt,
-  #welcome_txt_bellow,
-  .ninthScreen,
-  .wrap_center_msg {
-      width: 278px;
-  }
-  .wrap_auto {
-      top: 0;
+      width: 260px;
   }
   .first_wrap_auto {
       left: -20px;
   }
   .second_wrap_auto {
       right: -20px;
+  }
+  .ninthScreen {
+      width: 576px;
+  }
+  .wrap_ninthScreen {
+      top: 0;
+  }
+  #welcome_txt,
+  #welcome_txt_bellow,
+  .wrap_center_msg {
+      width: 278px;
+  }
+  .wrap_auto {
+      top: 0;
   }
   .wrap_center_msg {
       z-index: 1;
@@ -394,6 +405,8 @@
       width: 278px;
   }
   #friends1 {
+      height: -webkit-fit-content;
+      height: -moz-fit-content;
       height: fit-content;
       width: 100%;
   }
@@ -403,11 +416,11 @@
       margin-bottom: 100px;
   }
   #map {
-    width: 576px;
+      width: 576px;
   }
   #address {
-    top: 30px;
-    left: 32%;
+      top: 30px;
+      left: 32%;
   }
   .wrap_footer {
       top: 0;
@@ -433,15 +446,19 @@
   }
   .wrap_book2 {
       grid-row: 4 / 5 !important;
+      -webkit-margin-after: 50px !important;
       margin-block-end: 50px !important;
       left: 0;
   }
   .spec_grey2 {
+      -webkit-margin-before: 0 !important;
       margin-block-start: 0 !important;
+      -webkit-margin-after: 0 !important;
       margin-block-end: 0 !important;
   }
   #street {
       grid-row: 6 / 7 !important;
+      -webkit-margin-after: 15px !important;
       margin-block-end: 15px !important;
   }
   .wrpa_insta {
@@ -453,6 +470,7 @@
   }
   .made_in {
       grid-row: 9 / 10 !important;
+      -webkit-margin-before: 80px !important;
       margin-block-start: 80px !important;
   }
   .social_footer {
@@ -496,6 +514,7 @@
       padding: 10px;
   }
   .table-item p {
+      -webkit-margin-after: 0.5em;
       margin-block-end: 0.5em;
   }
   .table-item_text {
@@ -504,11 +523,20 @@
   .table-item_title {
       font-size: 25px;
   }
+  .wrap_auto picture img {
+      width: 150px;
+  }
+  .first_wrap_auto {
+      left: 0;
+  }
+  .second_wrap_auto {
+      right: 0;
+  }
   #map {
-    width: 380px;
-    height: 534px;
+      width: 380px;
+      height: 534px;
   }
   #address {
-    left: 35%;
+      left: 35%;
   }
 }
