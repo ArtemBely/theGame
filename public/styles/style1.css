@@ -103,15 +103,18 @@
   display: none;
 }
 
-html {
+html, body {
+  max-width: 100%;
   overflow-x: hidden;
+  height: 100%;
 }
+
 body {
   padding: 0;
   margin: 0;
   border: 0;
   font-family: "Inter-Regular";
-  background: #000;
+  background: #000; 
 }
 body.preview {
   height: 100vh !important;
@@ -124,11 +127,12 @@ button {
 }
 .wrap_allScreens {
   width: 100%;
+  height: 100%;
   display: grid;
   justify-content: center;
   background-color: #000;
-  overflow: clip;
 }
+
 .wrap_firstScreen {
   width: 100%;
   display: flex;
@@ -265,7 +269,6 @@ button {
   display: flex;
   justify-content: center;
   position: relative;
-  overflow: hidden;
 }
 .each_imgs1 {
   width: 594px;
@@ -479,11 +482,12 @@ button {
   -webkit-margin-after: 0.5em;
   margin-block-end: 0.5em;
 }
+
 .spaces-scroll {
   height: 300vh;
   position: relative;
-
 }
+
 .wrap_spaces {
   height: calc(100vh + 200px);
   display: flex;
@@ -596,11 +600,11 @@ button {
 }
 .packages-bg_gradient {
   background: radial-gradient(59.29% 27.26% at 50% 50%, #ff7a00 0%, #ff7a00 0.01%, rgba(255, 182, 140, 0.79) 40.62%, rgba(255, 0, 153, 0) 100%, rgba(255, 0, 153, 0.45) 100%);
-  background: -webkit-radial-gradient(59.29% 27.26% at 50% 50%, #ff7a00 0%, #ff7a00 0.01%, rgba(255, 182, 140, 0.79) 40.62%, rgba(255, 0, 153, 0) 100%, rgba(255, 0, 153, 0.45) 100%);
   -webkit-filter: blur(200px);
   filter: blur(200px);
   height: 700px;
   width: 1920px;
+  mix-blend-mode: exclusion;
 }
 .packages-bg.rotated {
   transform: rotate(0);

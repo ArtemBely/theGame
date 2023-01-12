@@ -7,18 +7,18 @@ window.addEventListener('beforeunload', () => {
 (function () {
     const e = document.querySelector(".wrap_spaces"),
         t = document.querySelector(".computers");
-    window.addEventListener("scroll", function () {
+    document.body.addEventListener("scroll", function () {
         let o = e.offsetTop;
         console.log(o)
-        t.style.left = `-${o / 2}px`;
+        t.style.transform = `translateX(-${o / 2}px)`;
     });
 })(),
-(window.onscroll = function () {
+(document.body.addEventListener ('scroll', function () {
     const e = document.querySelector(".wrap_imgs1"),
         t = e.getBoundingClientRect();
     let o = Math.floor(window.innerHeight - t.top);
     o < 0 && (o = 0), (e.style.transform = `translateX(-${o / 30}%)`);
-}),
+})),
 (function () {
     const e = document.querySelector(".neon_txt");
     new IntersectionObserver(

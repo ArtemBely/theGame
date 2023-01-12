@@ -1,7 +1,4 @@
 @media screen and (max-width: 991px) {
-    .body {
-        overflow-x: hidden;
-    }
     .wrap_logo > img {
       width: 200px;
   }
