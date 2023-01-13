@@ -4,11 +4,11 @@
   }
   #ember1 {
       z-index: 2;
-      left: 500px;
-      bottom: 30px;
+      left: 300px;
+      bottom: 10px;
   }
   #ember1 img {
-    width: 708px;
+    width: 1000px;
   }
   #ember2 {
       z-index: 8;
@@ -255,6 +255,7 @@
       justify-content: center;
       left: 0;
       text-align: center;
+      margin-block-start: 2em !important;
   }
   .wrpa_insta {
       grid-row: 6 / 7 !important;

@@ -134,6 +134,9 @@
         position: relative;
         bottom: 420px;
     }
+    .wrap_spaces {
+        top: -100px;
+    }
     .wrap_map {
         margin-bottom: 900px;
     }
@@ -142,7 +145,7 @@
     } */
 }
 @media (min-width: 992px) and (max-width: 1290px) {
-    body {
+    .wrap_allScreens {
         -moz-transform: scale(0.78, 0.78);
         zoom: 0.78;
         zoom: 78%;

@@ -5,12 +5,19 @@ window.addEventListener('beforeunload', () => {
     window.scrollTo(0, 0);
   }),
 (function () {
-    const e = document.querySelector(".wrap_spaces"),
-        t = document.querySelector(".computers");
+    const wrap = document.querySelector(".wrap_spaces"),
+        computers = document.querySelector(".computers"),
+        scroll = document.querySelector(".spaces-scroll"),
+        spaces = document.querySelector(".spaces");
+        let difference = computers.offsetWidth - spaces.offsetWidth;
+        function getTween(b, e, i) {
+            return b + ((i/99) * (e-b));
+        }
+        let tick;
     document.body.addEventListener("scroll", function () {
-        let o = e.offsetTop;
-        console.log(o)
-        t.style.transform = `translateX(-${o / 2}px)`;
+        tick = wrap.offsetTop
+        let currentPos = tick * 99 / (scroll.offsetHeight - wrap.offsetHeight)
+        computers.style.left = `-${getTween(0, difference, currentPos)}px`;
     });
 })(),
 (document.body.addEventListener ('scroll', function () {
@@ -42,18 +49,18 @@ window.addEventListener('beforeunload', () => {
         { threshold: 0 }
     ).observe(t);
 })(),
-(function () {
-    const e = document.querySelector(".packages-bg"),
-        t = document.querySelector(".packages-table");
-    new IntersectionObserver(
-        (t) => {
-            t.forEach((t) => {
-                t.isIntersecting ? (e.classList.add("rotated")) : e.classList.remove("rotated");
-            });
-        },
-        { threshold: 0.5 }
-    ).observe(t);
-})(),
+// (function () {
+//     const e = document.querySelector(".packages-bg"),
+//         t = document.querySelector(".packages-table");
+//     new IntersectionObserver(
+//         (t) => {
+//             t.forEach((t) => {
+//                 t.isIntersecting ? (e.classList.add("rotated")) : e.classList.remove("rotated");
+//             });
+//         },
+//         { threshold: 0.5 }
+//     ).observe(t);
+// })(),
 (function () {
     const e = document.querySelector(".fithScreen");
     new IntersectionObserver(
@@ -66,6 +73,9 @@ window.addEventListener('beforeunload', () => {
     ).observe(e);
 })(),
 (function () {
+    const hookah = document.querySelector('.seventhScreen')
+    const ember1 = document.querySelector('#ember1'),
+          ember2 = document.querySelector('#ember2')
     function stopableEventListener(e, t, r) {
         e.addEventListener(t, r)
         return function () {
@@ -73,15 +83,11 @@ window.addEventListener('beforeunload', () => {
         }
     }
     function emberTranslate () {
-        const ember1 = document.querySelector('#ember1'),
-              ember2 = document.querySelector('#ember2')
         ember1.style.transform = 'translateX(20%)'
         ember2.style.transform = 'translateX(30%)'
     }
-    const emberAnimation = stopableEventListener(window, 'scroll', () => {
-        const hookah = document.querySelector('.seventhScreen')
-        const hookahRect = hookah.getBoundingClientRect();
-        if(hookahRect.top <= window.innerHeight / 2) {
+    const emberAnimation = stopableEventListener(document.body, 'scroll', () => {
+        if( ember1.getBoundingClientRect().top <= window.innerHeight / 3 ) {
             emberTranslate()
             emberAnimation();
         }

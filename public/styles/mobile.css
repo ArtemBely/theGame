@@ -1,10 +1,7 @@
 @media screen and (max-width: 767px) {
     #ember1 {
         left: 20px;
-        bottom: 13px;
-    }
-    #ember1 img {
-        width: 578px;
+        bottom: 0;
     }
 
   .fifthScreen-expanded {
@@ -117,8 +114,12 @@
   }
 }
 @media screen and (max-width: 576px) {
+    #ember1 {
+        left: 50px;
+        bottom: 12px;
+    }
     #ember1 img {
-        width: 578px;
+        width: 500px;
     }
 
   .ember1-img {
@@ -136,6 +137,9 @@
   .seventhScreen {
       width: 278px;
   }
+  .wrap_logo {
+    margin-block-end: 0;
+  }
   .wrap_allScreens {
       position: relative;
   }
@@ -151,9 +155,8 @@
   #mobile_fone {
       display: block;
       margin: 0;
-      height: 870px;
+      height: 670px;
       position: relative;
-      top: -200px;
   }
   .mobile_book > a {
       text-decoration: none;
@@ -166,9 +169,6 @@
       justify-content: center;
       color: #bb6b75;
   }
-  .wrap_secondScreen {
-      margin-bottom: 100px;
-  }
   .secondScreen {
       grid-template-columns: 1fr;
       position: relative;
@@ -180,12 +180,13 @@
   .wrap_book picture img {
       width: 800px;
       position: relative;
-      top: -500px;
+      top: -400px;
       height: auto;
       right: 100px;
   }
   .wrap_thirdScreen {
       position: relative;
+      top: -100px;
   }
   #relax_txt-mobile {
       width: 276px;
@@ -213,7 +214,7 @@
   .wrap_fourthScreen {
       position: relative;
       margin-top: 0;
-      top: 600px;
+      top: 300px;
   }
   .fourthScreen {
       width: 320px;
@@ -231,7 +232,7 @@
       top: 700px;
   }
   .wrap_fithScreen {
-      top: 500px;
+      top: 300px;
   }
   .thirdDsgn_mobile {
       width: 100%;
@@ -241,6 +242,11 @@
   }
   .firstGradient {
       width: 302px;
+  }
+  .sixthScreen .firstGradient {
+    position: relative;
+    top: -25px;
+    width: 266px;
   }
   .fithScreen {
       width: 200px;
@@ -265,7 +271,7 @@
   }
   .wrap_sixthScreen {
       position: relative;
-      top: 700px;
+      top: 500px;
   }
   .sixthScreen {
       grid-gap: 30px;
@@ -308,7 +314,7 @@
   .wrap_seventhScreen {
       position: relative;
       margin-top: 0;
-      top: 820px;
+      top: 630px;
       left: 0;
   }
   .thirdScreen {
@@ -367,6 +373,7 @@
   #wats_btn {
       grid-column: 1 / 2;
       margin: 0;
+      margin-bottom: 20px;
   }
   #tlgr_btn {
       position: relative;
@@ -471,13 +478,13 @@
   .made_in {
       grid-row: 9 / 10 !important;
       -webkit-margin-before: 80px !important;
-      margin-block-start: 80px !important;
+      margin-block-start: 50px !important;
   }
   .social_footer {
       left: -15px;
   }
   .spaces-scroll {
-      top: 1000px;
+      top: 800px;
       margin-top: 0;
   }
   .spaces {
@@ -490,7 +497,7 @@
       padding: 20px;
   }
   .wrap_packages {
-      margin-top: 1000px;
+      margin-top: 800px;
   }
   .table-item_title {
       font-size: 30px;

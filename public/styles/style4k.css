@@ -380,4 +380,7 @@
       top: -299px;
       width: 2350px;
   }
+  .ninthScreen {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

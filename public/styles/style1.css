@@ -114,7 +114,6 @@ body {
   margin: 0;
   border: 0;
   font-family: "Inter-Regular";
-  background: #000; 
 }
 body.preview {
   height: 100vh !important;
@@ -127,7 +126,6 @@ button {
 }
 .wrap_allScreens {
   width: 100%;
-  height: 100%;
   display: grid;
   justify-content: center;
   background-color: #000;
@@ -498,13 +496,13 @@ button {
   width: 100%;
   position: -webkit-sticky;
   position: sticky;
-  top: 0;
+  top: -90px;
 }
 .spaces {
   position: relative;
   z-index: 1;
   width: 1200px;
-  height: 100%;
+  height: 100%; 
 }
 .computers {
   padding: 74px;
@@ -580,14 +578,12 @@ button {
   align-items: center;
   padding: 200px 0;
   position: relative;
-  isolation: isolate;
 }
 .packages {
   width: 1218px;
 }
 .packages-bg {
   position: absolute;
-  left: 0;
   top: 0;
   height: 100%;
   width: 100%;
@@ -600,8 +596,7 @@ button {
 }
 .packages-bg_gradient {
   background: radial-gradient(59.29% 27.26% at 50% 50%, #ff7a00 0%, #ff7a00 0.01%, rgba(255, 182, 140, 0.79) 40.62%, rgba(255, 0, 153, 0) 100%, rgba(255, 0, 153, 0.45) 100%);
-  -webkit-filter: blur(200px);
-  filter: blur(200px);
+  filter: blur(250px);
   height: 700px;
   width: 1920px;
   mix-blend-mode: exclusion;
@@ -609,25 +604,28 @@ button {
 .packages-bg.rotated {
   transform: rotate(0);
 }
+
+.packages-table_wrap {
+  border-radius: 10px;
+  padding: 74px;
+  width: 100%;
+  background: linear-gradient(180deg, #582222 0%, rgba(137, 118, 255, 0) 100%);
+  -webkit-backdrop-filter: blur(7px);
+  backdrop-filter: blur(7px);
+  z-index: 2;
+}
+
 .packages-table {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-auto-rows: -webkit-max-content;
   grid-auto-rows: max-content;
   grid-gap: 25px;
-  border-radius: 10px;
-  padding: 74px;
   width: 100%;
-  background: linear-gradient(180deg, #582222 0%, rgba(137, 118, 255, 0) 100%);
-  -webkit-backdrop-filter: blur(15px);
-  backdrop-filter: blur(15px);
-  position: relative;
-  z-index: 2;
-  opacity: 0.8;
   mix-blend-mode: screen;
 }
 .table-item {
-  mix-blend-mode: screen;
+  mix-blend-mode: normal;
   background: #16121d;
   color: #fff;
   padding: 45px;
